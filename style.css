@@ -1,0 +1,186 @@
+/*-------------------/
+/                    /
+/     SETUP PART     /
+/                    /
+/-------------------*/
+
+html, body {
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url("./src/images/metavirtualBackground.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+:root {
+    --title-font-size: 4em;
+    --title-text-font-size: 1.8em;
+    --little-title-font-size: 3em;
+    --text-font-size: 1.3em;
+    --input-font-size: 1.2em;
+}
+
+[hidden] {
+    display: none !important;
+} [hidding] {
+    animation: fadeOut 1s ease-in forwards !important;
+} [unhidding] {
+    animation: fadeIn 1s ease-in forwards !important;
+}
+
+/*--------------------------/
+/                           /
+/     END OF SETUP PART     /
+/                           /
+/--------------------------*/
+
+
+
+
+
+/*--------------------------------/
+/                                 /
+/     MAIN PAGE BUILDING PART     /
+/                                 /
+/--------------------------------*/
+
+
+/* code here, not above, not under */
+
+
+/*---------------------------------------/
+/                                        /
+/     END OF MAIN PAGE BUILDING PART     /
+/                                        /
+/---------------------------------------*/
+
+
+
+
+
+/*------------------------/
+/                         /
+/     ANIMATIONS PART     /
+/                         /
+/------------------------*/
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes neon {
+    0% {
+        text-shadow:
+        0 0 5px white,
+        0 0 10px transparentize(white, 0.5),
+        0 0 15px transparentize(white, 0.75),
+        0 0 20px $color-text,
+        0 0 35px $color-text,
+        0 0 40px $color-text,
+        0 0 50px $color-text,
+        0 0 75px $color-text,
+        0 0 85px black;
+    }
+
+    5% {
+        text-shadow: none;
+    }
+    
+    15% {
+        text-shadow:
+        0 0 5px white,
+        0 0 10px transparentize(white, 0.5),
+        0 0 15px transparentize(white, 0.75),
+        0 0 20px $color-text,
+        0 0 35px $color-text,
+        0 0 40px $color-text,
+        0 0 50px $color-text,
+        0 0 75px $color-text,
+        0 0 85px black;
+    }
+    25% {
+        text-shadow:
+        0 0 5px white,
+        0 0 10px transparentize(white, 0.5),
+        0 0 15px transparentize(white, 0.75),
+        0 0 20px $color-text,
+        0 0 35px $color-text,
+        0 0 40px $color-text,
+        0 0 50px $color-text,
+        0 0 75px $color-text,
+        0 0 85px black;
+    }
+    50% {
+        text-shadow: none;
+    }
+    75% {
+        text-shadow:
+        0 0 5px white,
+        0 0 10px transparentize(white, 0.5),
+        0 0 15px transparentize(white, 0.75),
+        0 0 20px $color-text,
+        0 0 35px $color-text,
+        0 0 40px $color-text,
+        0 0 50px $color-text,
+        0 0 75px $color-text,
+        0 0 85px black;
+    }
+
+    100% {
+        text-shadow:
+        0 0 5px white,
+        0 0 15px transparentize(white, 0.25),
+        0 0 20px transparentize(white, 0.5),
+        0 0 30px $color-text,
+        0 0 45px $color-text,
+        0 0 50px $color-text,
+        0 0 60px $color-text,
+        0 0 85px $color-text,
+        0 0 95px black;
+    }
+}
+
+/*------------------------/
+/                         /
+/     ANIMATIONS PART     /
+/                         /
+/------------------------*/

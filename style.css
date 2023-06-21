@@ -6,12 +6,10 @@
 
 html, body {
     min-width: 100%;
-    min-height: 100%;
-    background-image: url("./src/images/metavirtualBackground.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    height: 100%;
+    background-color: #010209;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
@@ -20,6 +18,7 @@ html, body {
     --little-title-font-size: 3em;
     --text-font-size: 1.3em;
     --input-font-size: 1.2em;
+    --line-height: 1.445em;
 }
 
 [hidden] {
@@ -46,9 +45,135 @@ html, body {
 /                                 /
 /--------------------------------*/
 
+section {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
-/* code here, not above, not under */
+header {
+    position: fixed;
 
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    text-align: center;
+    gap: 35px;
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    z-index: 2;
+    border-radius: 25px;
+    backdrop-filter: blur(6px);
+
+    color: #FFFFFF;
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 700;
+    /* font-size: 24px; */
+    font-size: var(--text-font-size);
+    line-height: var(--line-height);
+    letter-spacing: 0.1em;
+}
+
+header a {
+    appearance: inherit;
+    text-decoration: inherit;
+    color: inherit;
+}
+
+header a[selected] {
+    text-shadow: /* text stroke */ rgb(255, 72, 255) 2px 0px 0px, rgb(255, 72, 255) 1.75517px 0.958851px 0px, rgb(255, 72, 255) 1.0806px 1.68294px 0px, rgb(255, 72, 255) 0.141474px 1.99499px 0px, rgb(255, 72, 255) -0.832294px 1.81859px 0px, rgb(255, 72, 255) -1.60229px 1.19694px 0px, rgb(255, 72, 255) -1.97998px 0.28224px 0px, rgb(255, 72, 255) -1.87291px -0.701566px 0px, rgb(255, 72, 255) -1.30729px -1.5136px 0px, rgb(255, 72, 255) -0.421592px -1.95506px 0px, rgb(255, 72, 255) 0.567324px -1.91785px 0px, rgb(255, 72, 255) 1.41734px -1.41108px 0px, rgb(255, 72, 255) 1.92034px -0.558831px 0px,
+    /* glow shadow */ 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 0px 15px rgb(255, 72, 255);
+}
+
+
+section#WhyMetavirtual {
+    
+}
+
+section#WhyMetavirtual div.catalogContainer {
+    display: flex;
+    width: 95%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+}
+
+section#WhyMetavirtual div.catalogContainer video.image {
+    height: 69%;
+    width: 60%;
+    object-fit: cover;
+    transform: scale(1.5);
+    user-select: none;
+    pointer-events: none;
+}
+
+section#WhyMetavirtual div.catalogContainer div.content {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    z-index: 1;
+    max-height: 100%;
+    overflow: auto;
+}
+
+section#WhyMetavirtual div.catalogContainer div.content div.text {
+    color: #FFFFFF;
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--text-font-size);
+    line-height: var(--line-height);
+    letter-spacing: 0.1em;
+}
+
+section#WhyMetavirtual div.catalogContainer div.content div.text p {
+    
+}
+
+section#WhyMetavirtual div.catalogContainer div.content div.text strong {
+    color: #FF48FF;
+}
+
+section#WhyMetavirtual div.catalogContainer div.content div.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section#WhyMetavirtual div.catalogContainer div.content div.details p.text {
+    color: #FFFFFF;
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--text-font-size);
+    line-height: var(--line-height);
+    letter-spacing: 0.1em;
+}
+
+section#WhyMetavirtual div.catalogContainer div.content div.details button.download {
+    border-radius: 100px;
+    padding: 20px 50px 20px 50px;
+    background: #8424844D;
+    border: none;
+
+    color: #FFFFFF;
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--text-font-size);
+    line-height: var(--line-height);
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    margin: auto;
+    transition: 0.3s;
+} section#WhyMetavirtual div.catalogContainer div.content div.details button.download:hover {
+    background: #9e209eb2;
+}
 
 /*---------------------------------------/
 /                                        /
@@ -179,8 +304,119 @@ html, body {
     }
 }
 
+/*-------------------------------/
+/                                /
+/     END OF ANIMATIONS PART     /
+/                                /
+/-------------------------------*/
+
+
+
+
+
 /*------------------------/
 /                         /
-/     ANIMATIONS PART     /
+/     RESPONSIVE PART     /
 /                         /
 /------------------------*/
+
+
+@media (max-width: 1615px) {
+    :root {
+        --title-font-size: 2.5em;
+        --title-text-font-size: 1.4em;
+        --little-title-font-size: 2em;
+        --text-font-size: 1em;
+        --input-font-size: 0.9em;
+        --line-height: 1.3;
+    }
+}
+
+@media (max-width: 1115px) {
+    :root {
+        --title-font-size: 2em;
+        --title-text-font-size: 1.1em;
+        --little-title-font-size: 1.5em;
+        --text-font-size: 0.8em;
+        --input-font-size: 0.7em;
+        --line-height: 1.2;
+    }
+    section#WhyMetavirtual div.catalogContainer video.image {
+        height: 50%;
+        width: 40%;
+    }
+    
+    header {
+        gap: 30px;
+        padding: 25px;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 745px) {
+    :root {
+        --title-font-size: 2em;
+        --title-text-font-size: 0.9em;
+        --little-title-font-size: 1.5em;
+        --text-font-size: 0.7em;
+        --input-font-size: 0.6em;
+        --line-height: 1.1;
+    }
+}
+
+
+@media (max-width: 500px) {
+    :root {
+        --title-font-size: 1.8em;
+        --title-text-font-size: 0.8em;
+        --little-title-font-size: 1.3em;
+        --text-font-size: 0.6em;
+        --input-font-size: 0.5em;
+        --line-height: 1;
+    }
+
+    section#WhyMetavirtual div.catalogContainer video.image {
+        height: 50%;
+        width: 28%;
+    }
+
+    header {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}
+
+@media (max-width: 340px) {
+    :root {
+        --title-font-size: 1.5em;
+        --title-text-font-size: 0.7em;
+        --little-title-font-size: 1.2em;
+        --text-font-size: 0.5em;
+        --input-font-size: 0.4em;
+    }
+
+    section#WhyMetavirtual div.catalogContainer video.image {
+        height: 35%;
+        width: 20%;
+    }
+}
+@media (max-height: 460px) {
+    :root {
+        --title-font-size: 1.5em;
+        --title-text-font-size: 0.7em;
+        --little-title-font-size: 1.2em;
+        --text-font-size: 0.5em;
+        --input-font-size: 0.4em;
+    }
+
+    section#WhyMetavirtual div.catalogContainer video.image {
+        height: 33%;
+        width: 18%;
+    }
+}
+
+/*-------------------------------/
+/                                /
+/     END OF RESPONSIVE PART     /
+/                                /
+/-------------------------------*/

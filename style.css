@@ -5,12 +5,69 @@
 /-------------------*/
 
 html, body {
+  min-width: 100%;
+  height: 100%;
+  background-color: #010209;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    /* overflow: auto; */
+    width: auto;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+body > *:is(section) {
+    flex: 0 0 100%;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(180deg, #000 0%, #010209 63.54%);
+
+}
+::-webkit-scrollbar-thumb {
+    background: #84248469;
+    border-radius: 10px;
+    border: 3px solid #010209;
+    filter:drop-shadow();
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(126, 2, 126, 0.637);
+    border: 1px solid;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: rgba(126, 2, 126, 0.8);
+}
+::-webkit-scrollbar-corner {
+    background: linear-gradient(180deg, #000 0%, #010209 63.54%);
+}
+
+/*
+html, body {
     min-width: 100%;
     height: 100%;
     background-color: #010209;
     margin: 0;
     padding: 0;
 }
+*/
+
+/* Horizontal scroll */
+/* div.horizontalScroll {
+    transform: rotate(-90deg) translateY(-100px);
+    transform-origin: right top;
+}
+div.horizontalScroll > * {
+    transform: rotate(90deg);
+    transform-origin: right top;
+} */
 
 :root {
     --title-font-size: 4em;
@@ -48,11 +105,11 @@ html, body {
 section {
     position: relative;
     display: flex;
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 header {
@@ -80,104 +137,17 @@ header {
     letter-spacing: 0.1em;
 }
 
-header a {
+header a.sectionLink {
     appearance: inherit;
     text-decoration: inherit;
     color: inherit;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
-header a[selected] {
+header a.sectionLink[selected] {
     text-shadow: /* text stroke */ rgb(255, 72, 255) 2px 0px 0px, rgb(255, 72, 255) 1.75517px 0.958851px 0px, rgb(255, 72, 255) 1.0806px 1.68294px 0px, rgb(255, 72, 255) 0.141474px 1.99499px 0px, rgb(255, 72, 255) -0.832294px 1.81859px 0px, rgb(255, 72, 255) -1.60229px 1.19694px 0px, rgb(255, 72, 255) -1.97998px 0.28224px 0px, rgb(255, 72, 255) -1.87291px -0.701566px 0px, rgb(255, 72, 255) -1.30729px -1.5136px 0px, rgb(255, 72, 255) -0.421592px -1.95506px 0px, rgb(255, 72, 255) 0.567324px -1.91785px 0px, rgb(255, 72, 255) 1.41734px -1.41108px 0px, rgb(255, 72, 255) 1.92034px -0.558831px 0px,
     /* glow shadow */ 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 0px 15px rgb(255, 72, 255);
-}
-
-
-section#WhyMetavirtual {
-    
-}
-
-section#WhyMetavirtual div.catalogContainer {
-    display: flex;
-    width: 95%;
-    height: 80%;
-    align-items: center;
-    justify-content: center;
-}
-
-section#WhyMetavirtual div.catalogContainer video.image {
-    height: 69%;
-    width: 60%;
-    object-fit: cover;
-    transform: scale(1.5);
-    user-select: none;
-    pointer-events: none;
-}
-
-section#WhyMetavirtual div.catalogContainer div.content {
-    display: flex;
-    flex-direction: column;
-    gap: 70px;
-    z-index: 1;
-    max-height: 100%;
-    overflow: auto;
-}
-
-section#WhyMetavirtual div.catalogContainer div.content div.text {
-    color: #FFFFFF;
-    font-family: 'Orbitron';
-    font-style: normal;
-    font-weight: 700;
-    font-size: var(--text-font-size);
-    line-height: var(--line-height);
-    letter-spacing: 0.1em;
-}
-
-section#WhyMetavirtual div.catalogContainer div.content div.text p {
-    
-}
-
-section#WhyMetavirtual div.catalogContainer div.content div.text strong {
-    color: #FF48FF;
-}
-
-section#WhyMetavirtual div.catalogContainer div.content div.details {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-section#WhyMetavirtual div.catalogContainer div.content div.details p.text {
-    color: #FFFFFF;
-    font-family: 'Orbitron';
-    font-style: normal;
-    font-weight: 700;
-    font-size: var(--text-font-size);
-    line-height: var(--line-height);
-    letter-spacing: 0.1em;
-}
-
-section#WhyMetavirtual div.catalogContainer div.content div.details a:has(button.download) {
-    display: contents;
-}
-
-section#WhyMetavirtual div.catalogContainer div.content div.details button.download {
-    border-radius: 100px;
-    padding: 20px 50px 20px 50px;
-    background: #8424844D;
-    border: none;
-
-    color: #FFFFFF;
-    font-family: 'Orbitron';
-    font-style: normal;
-    font-weight: 700;
-    font-size: var(--text-font-size);
-    line-height: var(--line-height);
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    margin: auto;
-    transition: 0.3s;
-} section#WhyMetavirtual div.catalogContainer div.content div.details button.download:hover {
-    background: #9e209eb2;
 }
 
 /*---------------------------------------/
@@ -326,7 +296,7 @@ section#WhyMetavirtual div.catalogContainer div.content div.details button.downl
 /------------------------*/
 
 
-@media (max-width: 1615px) {
+@media screen and (max-width: 1615px) {
     :root {
         --title-font-size: 2.5em;
         --title-text-font-size: 1.4em;
@@ -337,7 +307,7 @@ section#WhyMetavirtual div.catalogContainer div.content div.details button.downl
     }
 }
 
-@media (max-width: 1115px) {
+@media screen and (max-width: 1115px) {
     :root {
         --title-font-size: 2em;
         --title-text-font-size: 1.1em;
@@ -346,11 +316,6 @@ section#WhyMetavirtual div.catalogContainer div.content div.details button.downl
         --input-font-size: 0.7em;
         --line-height: 1.2;
     }
-    section#WhyMetavirtual div.catalogContainer video.image {
-        height: 50%;
-        width: 40%;
-    }
-    
     header {
         gap: 30px;
         padding: 25px;
@@ -358,7 +323,7 @@ section#WhyMetavirtual div.catalogContainer div.content div.details button.downl
     }
 }
 
-@media (max-width: 745px) {
+@media screen and (max-width: 745px) {
     :root {
         --title-font-size: 2em;
         --title-text-font-size: 0.9em;
@@ -370,7 +335,7 @@ section#WhyMetavirtual div.catalogContainer div.content div.details button.downl
 }
 
 
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
     :root {
         --title-font-size: 1.8em;
         --title-text-font-size: 0.8em;
@@ -380,20 +345,22 @@ section#WhyMetavirtual div.catalogContainer div.content div.details button.downl
         --line-height: 1;
     }
 
-    section#WhyMetavirtual div.catalogContainer video.image {
-        height: 50%;
-        width: 100%;
-        position: absolute;
-        opacity: 0.3;
-    }
-
     header {
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
 }
 
-@media (max-width: 340px) {
+@media screen and (max-width: 340px) {
+    :root {
+        --title-font-size: 1.5em;
+        --title-text-font-size: 0.7em;
+        --little-title-font-size: 1.2em;
+        --text-font-size: 0.5em;
+        --input-font-size: 0.4em;
+    }
+}
+@media screen and (max-height: 460px) {
     :root {
         --title-font-size: 1.5em;
         --title-text-font-size: 0.7em;
@@ -402,31 +369,6 @@ section#WhyMetavirtual div.catalogContainer div.content div.details button.downl
         --input-font-size: 0.4em;
     }
 
-    section#WhyMetavirtual div.catalogContainer video.image {
-        height: 30%;
-        width: 100%;
-    }
-}
-@media (max-height: 460px) {
-    :root {
-        --title-font-size: 1.5em;
-        --title-text-font-size: 0.7em;
-        --little-title-font-size: 1.2em;
-        --text-font-size: 0.5em;
-        --input-font-size: 0.4em;
-    }
-
-    section#WhyMetavirtual div.catalogContainer video.image {
-        height: 45%;
-        width: 35%;
-    }
-}
-
-@media (max-height: 460px) and (max-width: 500px) {
-    section#WhyMetavirtual div.catalogContainer video.image {
-        height: 50%;
-        width: 100%;
-    }
 }
 
 /*-------------------------------/

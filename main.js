@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     mainPage.setAttribute("hidden", "");
                     mainPage.removeAttribute("hidding");
                 }
-            });
+            }, { once: true });
         });
     }
 });
@@ -48,6 +48,17 @@ window.addEventListener('click', (event) => {
         });
 
         target.setAttribute('selected', '');
+        event.preventDefault();
+
+        var targetSection = document.querySelector(target.getAttribute('href'));
+        var scrollOffset = targetSection.offsetWidth / 2;
+
+        targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'center',
+            scrollLeft: scrollOffset
+        });
     }
 });
 
@@ -141,26 +152,32 @@ setInterval(() => {
     nextScrollTo = null;
 }, 85);
 
+function scrollTo(options) {
+    requestAnimationFrame(() => {
+        document.body.scrollTo(options);
+    });
+}
 function scrollToMax() {
     // Défilement horizontal vers le maximum
     var maxScrollLeft = document.body.scrollWidth - document.body.clientWidth;
-    document.body.scrollTo({
+    scrollTo({
         left: maxScrollLeft,
         behavior: 'smooth'
     });
 }
 function scrollToMin() {
-    document.body.scrollTo({
+    scrollTo({
         left: 0,
         behavior: 'smooth'
     });
 }
 function scrollByPage(delta) {
-    document.body.scrollTo({
+    scrollTo({
         left: document.body.scrollLeft + delta,
         behavior: 'smooth'
     });
 }
+
 
 var isKeyDown = false;
 document.addEventListener('keydown', (event) => {

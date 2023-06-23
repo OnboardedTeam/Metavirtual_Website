@@ -15,7 +15,7 @@
     <meta property="og:keywords" content="Metavirtual, Website, VR, Virtual Reality, AR, Augmented Reality, 3D, Metaverse, Home" />
     <meta name="copyright" content="© Metavirtual 2023 - 2023" />
     <meta name="DC.Date.created" scheme="W3CDTF" content="2023-06-21" />
-    <meta name="DC.Date.modified" scheme="W3CDTF" content="2023-06-22" />
+    <meta name="DC.Date.modified" scheme="W3CDTF" content="2023-06-23" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://onboardedteam.github.io/Onboarded_Showcase_Website/" />
     <meta property="og:locale" content="en-US" />
@@ -55,6 +55,7 @@
     <link rel="stylesheet" type="text/css" href="./OurTeam.css">
     <link rel="stylesheet" type="text/css" href="./Contact.css">
     <link rel="stylesheet" type="text/css" href="./mainPage.css">
+    <link rel="stylesheet" type="text/css" href="./customCursor.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -172,20 +173,20 @@
     <section class="ourWork" id="ourWork">
         <div class="cards">
             <div class="card">
-                <div class="cardContainer video">
+                <div class="cardContainer video" effect="cursor3D" effect-power="2">
                     <video src="./src/videos/editor_tools_background.mp4" disablePictureInPicture autoplay loop
                         muted></video>
                 </div>
                 <div class="textContainer">
                     <h2 class="titleCard1">Build Your Own Virtual Space In The Metaverse</h2>
-                    <p>Unlock the limitless possibilities of digital events in the metaverse with our metaverse events
-                        platform solutions. Organize metaverse meetings, exhibitions, metaverse music festivals, metaverse
-                        expos, seminars, or exciting celebration events in the metaverse to target global audience
-                        participation.</p>
+                    <p>Step into a realm where dreams intertwine,
+                    Build your own virtual space, a world divine.
+                    In the Metaverse's embrace, imagination takes flight,
+                    Unleash your creativity, make every pixel ignite.</p>
                 </div>
             </div>
             <div class="card">
-                <div class="cardContainer video">
+                <div class="cardContainer video" effect="cursor3D" effect-power="2">
                     <video src="./src/videos/E_commerce.mp4" disablePictureInPicture autoplay loop muted></video>
                 </div>
                 <div class="textContainer">
@@ -196,7 +197,7 @@
                 </div>
             </div>
             <div class="card">
-                <div class="cardContainer video">
+                <div class="cardContainer video" effect="cursor3D" effect-power="2">
                     <video src="./src/videos/Riyadh.mp4" disablePictureInPicture autoplay loop muted></video>
                 </div>
                 <div class="textContainer">
@@ -348,8 +349,11 @@
         </div>
     </section>
     <!-- ************************ end of section Contact ************************ -->
-    
+
+    <span class="custom-cursor"></span>
 
     <script src="./main.js" defer></script>
+    <script src="./parallax_card_effect.js" defer></script>
+    <script src="./customCursor.js" defer></script>
 </body>
 </html>

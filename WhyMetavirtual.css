@@ -32,7 +32,6 @@ section#WhyMetavirtual div.catalogContainer div.content {
     gap: 70px;
     z-index: 1;
     max-height: 100%;
-    overflow: auto;
 }
 
 section#WhyMetavirtual div.catalogContainer div.content div.text {
@@ -90,7 +89,10 @@ section#WhyMetavirtual div.catalogContainer div.content div.details button.downl
     margin: auto;
     transition: 0.3s;
 } section#WhyMetavirtual div.catalogContainer div.content div.details button.download:hover {
-    background: #9e209eb2;
+      background: #842484;
+      box-shadow: 0px 0px 25px 0px #842484;
+      color: #FFF;
+      text-shadow: 0px 0px 25px #FFF, 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 /*---------------------------------------/

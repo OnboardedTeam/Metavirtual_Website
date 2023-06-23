@@ -137,6 +137,18 @@ header {
     letter-spacing: 0.1em;
 }
 
+header a:has(img.logo) {
+    display: contents;
+}
+
+header a img.logo {
+    margin-right: auto;
+    height: 20px; /* A REMPLACER */
+    transform: scale(8);
+    margin-left: 20px;
+
+}
+
 header a.sectionLink {
     appearance: inherit;
     text-decoration: inherit;

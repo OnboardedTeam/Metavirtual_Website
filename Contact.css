@@ -17,7 +17,7 @@ section#Contact .imagerobot {
     width: 350px;
     height: 709px;
     border-right: 1px solid white;
-    background: url(/src/images/imagerobot.png);
+    background: url(./src/images/imagerobot.png);
     background-repeat: no-repeat;
 }
 
@@ -28,10 +28,8 @@ section#Contact .contactform {
 }
 
 section#Contact #titre {
-    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px,
-        #FFF 0px 0px 15px, #FF2D95 0px 0px 20px,
-        #FF2D95 0px 0px 30px, #FF2D95 0px 0px 50px,
-        #FF2D95 0px 0px 75px;
+    text-shadow: /* text stroke */ rgb(255, 72, 255) 2px 0px 0px, rgb(255, 72, 255) 1.75517px 0.958851px 0px, rgb(255, 72, 255) 1.0806px 1.68294px 0px, rgb(255, 72, 255) 0.141474px 1.99499px 0px, rgb(255, 72, 255) -0.832294px 1.81859px 0px, rgb(255, 72, 255) -1.60229px 1.19694px 0px, rgb(255, 72, 255) -1.97998px 0.28224px 0px, rgb(255, 72, 255) -1.87291px -0.701566px 0px, rgb(255, 72, 255) -1.30729px -1.5136px 0px, rgb(255, 72, 255) -0.421592px -1.95506px 0px, rgb(255, 72, 255) 0.567324px -1.91785px 0px, rgb(255, 72, 255) 1.41734px -1.41108px 0px, rgb(255, 72, 255) 1.92034px -0.558831px 0px,
+        /* glow shadow */ 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 0px 15px rgb(255, 72, 255);
     color: #FFF;
     font-family: 'Orbitron';
     font-size: 20px;
@@ -96,10 +94,26 @@ section#Contact .button {
 }
 
 section#Contact #button {
-    width: 300px;
-    border-radius: 25px;
-    height: 60px;
-    background: rgba(132, 36, 132, 0.3);
+    border-radius: 100px;
+    padding: 20px 50px 20px 50px;
+    background: #8424844D;
+    border: none;
+
+    color: #FFFFFF;
     font-family: 'Orbitron';
+    font-style: bold;
+    font-weight: 700;
+    font-size: var(--text-font-size);
+    line-height: var(--line-height);
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    margin: auto;
+    transition: 0.3s;
+}
+
+section#Contact #button:hover {
+    background: #842484;
+    box-shadow: 0px 0px 25px 0px #842484;
     color: #FFF;
+    text-shadow: 0px 0px 25px #FFF, 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

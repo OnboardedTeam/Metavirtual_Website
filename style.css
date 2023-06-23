@@ -110,6 +110,7 @@ section {
     align-items: center;
     justify-content: center;
     /* overflow: hidden; */
+    scroll-snap-align: center;
 }
 
 header {
@@ -135,18 +136,6 @@ header {
     font-size: var(--text-font-size);
     line-height: var(--line-height);
     letter-spacing: 0.1em;
-}
-
-header a:has(img.logo) {
-    display: contents;
-}
-
-header a img.logo {
-    margin-right: auto;
-    height: 20px; /* A REMPLACER */
-    transform: scale(8);
-    margin-left: 20px;
-
 }
 
 header a.sectionLink {

@@ -1,5 +1,5 @@
 section#ourWork {
-    background: linear-gradient(180deg, #000 0%, #010209 63.54%);
+    /* background: linear-gradient(180deg, #000 0%, #010209 63.54%); */
 }
 
 section#ourWork h2 {
@@ -52,7 +52,7 @@ section#ourWork .cards {
 section#ourWork .cards .card {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 340px;
     align-items: center;
 }
 

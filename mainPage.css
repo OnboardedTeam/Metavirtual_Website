@@ -1,4 +1,3 @@
-/* code here, not above, not under */
 div.mainPage {
     display: flex;
     width: 100%;
@@ -65,8 +64,8 @@ div.mainPage .button {
     display: flex;
     align-self: center;
     justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 200px;
+    margin-top: 80px;
+    margin-bottom: 180px;
 }
 
 div.mainPage button {
@@ -211,4 +210,14 @@ div.mainPage button:hover {
 
 @media only screen and (min-width: 737px) and (max-width: 1024px) and (orientation: landscape) {
 
+}
+
+body[mobileVersion] div.mainPage {
+    position: relative;
+    flex: 0 0 100%;
+    z-index: 3;
+}
+
+body[mobileVersion] .video-bg {
+    position: absolute;
 }

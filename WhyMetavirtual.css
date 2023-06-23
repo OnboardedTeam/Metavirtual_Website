@@ -6,6 +6,7 @@
 
 section#WhyMetavirtual {
     overflow: hidden;
+    background-color: #010209;
 }
 
 section#WhyMetavirtual div.catalogContainer {
@@ -68,7 +69,7 @@ section#WhyMetavirtual div.catalogContainer div.content div.details p.text {
     letter-spacing: 0.1em;
 }
 
-section#WhyMetavirtual div.catalogContainer div.content div.details a:has(button.download) {
+section#WhyMetavirtual div.catalogContainer div.content div.details a:is(:has(button.download), :not(.normalLink)) {
     display: contents;
 }
 

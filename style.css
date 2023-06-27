@@ -4,6 +4,16 @@
 /                    /
 /-------------------*/
 
+:root {
+    --title-font-size: 4em;
+    --title-text-font-size: 1.8em;
+    --little-title-font-size: 3em;
+    --text-font-size: 1.3em;
+    --input-font-size: 1.2em;
+    --line-height: 1.445em;
+    --scrollbar-size: 14px;
+}
+
 html, body {
   min-width: 100%;
   height: 100%;
@@ -11,32 +21,30 @@ html, body {
   background: linear-gradient(180deg, #000 0%, #010209 63.54%);
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: auto;
   position: relative;
 }
 
 body {
     display: flex;
-    overflow-y: hidden;
-    overflow-x: auto;
     /* overflow: auto; */
-    width: auto;
-    height: 100%;
+    height: calc(100% - var(--scrollbar-size));
     scroll-behavior: smooth;
 }
 body[mobileVersion] {
     flex-direction: column;
     overflow: auto;
-    /* width: 100%;
-    height: auto; */
+    width: calc(100% - var(--scrollbar-size));
 }
+
 body > *:is(section) {
     flex: 0 0 100%;
 }
 
 ::-webkit-scrollbar {
-    width: 14px;
-    height: 14px;
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
     background: linear-gradient(180deg, #000 0%, #010209 63.54%);
     z-index: 9999;
 
@@ -80,15 +88,6 @@ div.horizontalScroll > * {
     transform-origin: right top;
 } */
 
-:root {
-    --title-font-size: 4em;
-    --title-text-font-size: 1.8em;
-    --little-title-font-size: 3em;
-    --text-font-size: 1.3em;
-    --input-font-size: 1.2em;
-    --line-height: 1.445em;
-}
-
 [hidden] {
     display: none !important;
 } [hidding] {
@@ -125,19 +124,18 @@ section {
 
 header {
     position: fixed;
-
     display: flex;
     justify-content: end;
     align-items: center;
     text-align: center;
     gap: 35px;
     width: 100%;
-    padding: 40px;
+    min-height: 100px;
+    padding: 30px;
     box-sizing: border-box;
     z-index: 2;
-    border-radius: 25px;
+    border-radius: 0 0 25px 25px;
     backdrop-filter: blur(6px);
-
     color: #FFFFFF;
     font-family: 'Orbitron';
     font-style: normal;
@@ -148,15 +146,23 @@ header {
     letter-spacing: 0.1em;
 }
 
+body[mobileVersion] header {
+    width: calc(100% - var(--scrollbar-size));
+}
+
 header a:is(:has(img.logo), :not(.sectionLink)) {
     display: contents;
 }
 
 header a img.logo {
     margin-right: auto;
-    height: 20px;/* A REMPLACER */
-    transform: scale(3.8);
+    height: 60px;
     margin-left: 20px;
+    transition: 0.2s;
+}
+
+header a img.logo:hover {
+    transform: scale(110%);
 }
 
 header a.sectionLink {
@@ -341,7 +347,7 @@ header a.sectionLink[selected] {
     header {
         gap: 30px;
         padding: 25px;
-        border-radius: 20px;
+        border-radius: 0 0 20px 20px;
     }
 }
 

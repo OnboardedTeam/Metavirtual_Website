@@ -13,7 +13,7 @@ body:not([mobileVersion]) .custom-cursor {
     pointer-events: none;
     user-select: none;
     z-index: 999;
-    transition: left 0.05s, top 0.05s, width 0.2s, background-color 0.3s, border 0.2s, opacity 0.15s, transform 0.2s;
+    transition: left 0.01s, top 0.01s, width 0.2s, background-color 0.3s, border 0.2s, opacity 0.15s, transform 0.2s;
     transform: translate(-50%, -50%) scale(1);
 }
 

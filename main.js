@@ -189,15 +189,64 @@ checkSection();
 /                                /
 /-------------------------------*/
 
+function hasOverflowHiddenClass(element) {
+    const computedStyles = window.getComputedStyle(element);
+    const overflowValue = computedStyles.getPropertyValue('overflow');
+    return overflowValue != 'auto' && overflowValue != 'overlay' && overflowValue != 'scroll';
+}
+
+function isElementOrParentScrollable(element) {
+    let currentElement = element;
+
+    while (currentElement !== null && currentElement !== document.body) {
+        if ((currentElement !== document.body && (currentElement.scrollHeight > currentElement.clientHeight || currentElement.scrollWidth > currentElement.clientWidth)) && !hasOverflowHiddenClass(currentElement)) {
+            return currentElement; // Scrollbar found and no overflow-hidden class on the element
+        }
+
+        currentElement = currentElement.parentElement;
+    }
+
+    return null; // No scrollbar found in any parent or body element reached, or an overflow-hidden class is present
+}
+
+function getScrollPosition(element) {
+    if (element.scrollTop === 0) {
+        return -1; // Scroll position at the start
+    } else if (element.scrollTop + element.clientHeight >= element.scrollHeight) {
+        return 1; // Scroll position at the end
+    } else {
+        return 0; // Scroll position in between
+    }
+}
+
 if (!window.mobileCheck()) {
     //Desktop version page display
     
     document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('wheel', (event) => {
-            if (nextScrollTo == null) {
-                nextScrollTo = 0;
+            let scrolling = true;
+            let deltaY = event.deltaY;
+            potentialScrolling = isElementOrParentScrollable(event.target);
+            if (potentialScrolling && potentialScrolling != null) {
+                let scrollPosition = getScrollPosition(potentialScrolling);
+
+                if (scrollPosition === -1) {
+                    //at the start
+                    deltaY = Math.min(0, deltaY);
+                } else if (scrollPosition === 1) {
+                    //at the end
+                    deltaY = Math.max(0, deltaY);
+                } else {
+                    //between
+                    scrolling = false;
+                }
             }
-            nextScrollTo += event.deltaY*2;
+            if (scrolling) {
+                if (nextScrollTo == null) {
+                    nextScrollTo = 0;
+                }
+                nextScrollTo += deltaY * 2;
+            }
         });
     });
     

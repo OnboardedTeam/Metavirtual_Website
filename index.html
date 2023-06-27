@@ -15,7 +15,7 @@
     <meta property="og:keywords" content="Metavirtual, Website, VR, Virtual Reality, AR, Augmented Reality, 3D, Metaverse, Home" />
     <meta name="copyright" content="© Metavirtual 2023 - 2023" />
     <meta name="DC.Date.created" scheme="W3CDTF" content="2023-06-21" />
-    <meta name="DC.Date.modified" scheme="W3CDTF" content="2023-06-23" />
+    <meta name="DC.Date.modified" scheme="W3CDTF" content="2023-06-28" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://onboardedteam.github.io/Metavirtual_Website/" />
     <meta property="og:locale" content="en-US" />
@@ -117,40 +117,38 @@
 
     <!-- ************************ section WhatWeOffer ************************ -->
     <section id="WhatWeOffer">
-        <div class="divimages">
-            <div class="image1">
-                <p id="titre1">SOLUTIONS FOR YOUR <br> BUSINESS</p>
-                <p id="text1">We help brands and individuals build up their active & passive income with an exclusive model
+        <div class="imagesCardsContainer">
+            <div class="imageCard image1">
+                <p class="title">SOLUTIONS FOR YOUR <br> BUSINESS</p>
+                <p class="text">We help brands and individuals build up their active & passive income with an exclusive model
                     encouraging team buildings and collabs to expand creation & imagination.</p>
             </div>
-            <div class="image2">
-                <p id="titre2">POWERFUL A.I. TOOL</p>
-                <p id="text2">help endusers endlessly generate 3D items ready for sale, design a new brand in 1 click or follow
+            <div class="imageCard image2">
+                <p class="title">POWERFUL A.I. TOOL</p>
+                <p class="text">help endusers endlessly generate 3D items ready for sale, design a new brand in 1 click or follow
                     other promotional purposes. A search engine that converts words into 3D objects giving everyone a chance to
                     become successful through our immersive monetizing platform. This technology will soon be fully compatible
                     with Unity, Unreal engine and Apple Reality One standards. A world of self made opportunities is on a rise
                     to achieve your dreams and fulfill all of your passive income desires.</p>
             </div>
-            <div class="image3">
-                <p id="titre3">VOLUMETRIC VIDEOS <br> TECHNOLOGY</p>
-                <p id="text3">Enjoy the power of the volumetric technology for your avatar, 3D concerts & events ! <br>
+            <div class="imageCard image3">
+                <p class="title">VOLUMETRIC VIDEOS <br> TECHNOLOGY</p>
+                <p class="text">Enjoy the power of the volumetric technology for your avatar, 3D concerts & events ! <br>
                     Ultra-realistic 3D-Avatars <br>
                     Digital-twin animation <br>
                     Volumetric Videos <br>
                     Programmatic Replays / Ticketting-NFT</p>
             </div>
-        </div>
-        <div class="divimages2">
-            <div class="image4">
-                <p id="titre4">3D-SHOPPING & BRAND <br>VIRTUALIZATION</p>
-                <p id="text4">Beautiful outlets & shopping stores <br>
+            <div class="imageCard image4">
+                <p class="title">3D-SHOPPING & BRAND <br>VIRTUALIZATION</p>
+                <p class="text">Beautiful outlets & shopping stores <br>
                     Unique search-engine helping customers purchases <br>
                     Visibility maximised through our marketplace <br>
                     Traffic exposure to maximize brand awareness</p>
             </div>
-            <div class="image5">
-                <p id="titre5">END-USER INNOVATIONS</p>
-                <p id="text5">Self made avatars <br>
+            <div class="imageCard image5">
+                <p class="title">END-USER INNOVATIONS</p>
+                <p class="text">Self made avatars <br>
                     Self branding <br>
                     Self monetization <br>
                     Volumetric Videos <br>
@@ -158,9 +156,9 @@
                     Sales tunneling <br>
                     Embedded A.I tools for content creators</p>
             </div>
-            <div class="image6">
-                <p id="titre6">3D - GAMIFICATION</p>
-                <p id="text6">Smart technologies improving community-games <br>
+            <div class="imageCard image6">
+                <p class="title">3D - GAMIFICATION</p>
+                <p class="text">Smart technologies improving community-games <br>
                     Support / ADMIN on Discord, Twitch, <br>
                     Snapchat, Instagram, Reddit, Pinterest, FB,<br>
                     Etc...</p>
@@ -323,34 +321,26 @@
             <div class="imagerobot"></div>
             <div class="contactform">
                 <div class="titre">
-                    <p id="titre">LET'S GET STARTED <br>
+                    <p>LET'S GET STARTED <br>
                         Contact us to start your next project !</p>
                 </div>
-                <div class="icons">
+                <!-- <div class="icons">
                     <img id="facebook" src="/src/images/facebook 1.png" alt="">
                     <img id="insta" src="/src/images/insta 1.png" alt="">
                     <img id="twitter" src="/src/images/mdi_twitter 1.png" alt="">
-                </div>
+                </div> -->
                 <form class="contact" id="ContactUsForm" action="https://formspree.io/f/mknalgyr" method="POST">
-                    <div class="fullname">
-                        <input id='fullname' type="name" maxlength="128" name="name" data-name="name" placeholder=" Full name" required>
-                    </div>
-                    <div class="email">
-                        <input id='email' type="email" maxlength="128" name="email" data-name="email" placeholder=" E-mail address" required>
-                    </div>
-                    <div class="message">
-                        <textarea id="message" maxlength="8500" name="message" data-name="message" placeholder="  Your message..." required></textarea>
-                    </div>
-                    <div class="button">
-                        <input type="submit" id='button' value="Send Message">
-                    </div>
+                    <input id='fullname' type="name" maxlength="128" name="name" data-name="name" placeholder="Full name" autocomplete="name" required />
+                    <input id='email' type="email" maxlength="128" name="email" data-name="email" placeholder="E-mail address" required />
+                    <textarea id="message" maxlength="8500" name="message" data-name="message" placeholder="Your message..." autocomplete="message" required></textarea>
+                    <input type="submit" id='button' value="Send Message" />
                 </form>
             </div>
         </div>
     </section>
     <!-- ************************ end of section Contact ************************ -->
 
-    <span class="custom-cursor"></span>
+    <span class="custom-cursor" style="left:-999px;"></span>
 
     <script src="./main.js" defer></script>
     <script src="./parallax_card_effect.js" defer></script>

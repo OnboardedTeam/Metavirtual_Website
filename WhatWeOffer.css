@@ -1,213 +1,201 @@
 section#WhatWeOffer {
     /* background: linear-gradient(180deg, #010209 42.71%, #020202 100%); */
-    display: block;
-    transform: scale(0.85);
 }
 
-section#WhatWeOffer .divimages {
+section#WhatWeOffer div.imagesCardsContainer {
     display: flex;
-    justify-content: center;
+    width: 90%;
+    height: 85%;
+    flex: 0 0 90%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
-    padding-top: 150px;
-    padding-bottom: 40px;
-
+    margin: auto;
+    margin-block-start: 120px;
+    overflow: hidden;
+    gap: 15px;
 }
 
-section#WhatWeOffer .image1 {
-    width: 500px;
-    height: 400px;
-    background: url(./src/images/image1.png);
-    background-repeat: no-repeat;
-    padding-right: 40px;
-
-}
-
-section#WhatWeOffer #titre1 {
-    color: #FFF;
-    text-shadow: /* text stroke */ rgb(255, 72, 255) 2px 0px 0px, rgb(255, 72, 255) 1.75517px 0.958851px 0px, rgb(255, 72, 255) 1.0806px 1.68294px 0px, rgb(255, 72, 255) 0.141474px 1.99499px 0px, rgb(255, 72, 255) -0.832294px 1.81859px 0px, rgb(255, 72, 255) -1.60229px 1.19694px 0px, rgb(255, 72, 255) -1.97998px 0.28224px 0px, rgb(255, 72, 255) -1.87291px -0.701566px 0px, rgb(255, 72, 255) -1.30729px -1.5136px 0px, rgb(255, 72, 255) -0.421592px -1.95506px 0px, rgb(255, 72, 255) 0.567324px -1.91785px 0px, rgb(255, 72, 255) 1.41734px -1.41108px 0px, rgb(255, 72, 255) 1.92034px -0.558831px 0px,
-        /* glow shadow */ 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 0px 15px rgb(255, 72, 255);
-    font-family: Orbitron;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 150px;
-
-}
-
-section#WhatWeOffer #text1 {
-    font-family: 'Orbitron';
-    font-size: 16px;
-    text-align: center;
-    color: #FFFF;
-    padding-top: 40px;
-}
-
-section#WhatWeOffer .image2 {
-    width: 500px;
-    height: 400px;
-    background: url(./src/images/image2.png);
-    background-repeat: no-repeat;
-    padding-right: 40px;
-
-}
-
-section#WhatWeOffer #titre2 {
-    color: #FFF;
-    text-shadow: /* text stroke */ rgb(255, 72, 255) 2px 0px 0px, rgb(255, 72, 255) 1.75517px 0.958851px 0px, rgb(255, 72, 255) 1.0806px 1.68294px 0px, rgb(255, 72, 255) 0.141474px 1.99499px 0px, rgb(255, 72, 255) -0.832294px 1.81859px 0px, rgb(255, 72, 255) -1.60229px 1.19694px 0px, rgb(255, 72, 255) -1.97998px 0.28224px 0px, rgb(255, 72, 255) -1.87291px -0.701566px 0px, rgb(255, 72, 255) -1.30729px -1.5136px 0px, rgb(255, 72, 255) -0.421592px -1.95506px 0px, rgb(255, 72, 255) 0.567324px -1.91785px 0px, rgb(255, 72, 255) 1.41734px -1.41108px 0px, rgb(255, 72, 255) 1.92034px -0.558831px 0px,
-        /* glow shadow */ 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 0px 15px rgb(255, 72, 255);
-    font-family: Orbitron;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 110px;
-}
-
-section#WhatWeOffer #text2 {
-    font-family: 'Orbitron';
-    font-size: 16px;
-    text-align: center;
-    color: #FFFF;
-}
-
-section#WhatWeOffer .image3 {
-    width: 500px;
-    height: 400px;
-    background: url(./src/images/image3.png);
-    background-repeat: no-repeat;
-    padding-right: 40px;
-
-}
-
-section#WhatWeOffer #titre3 {
-    color: #FFF;
-    text-shadow: /* text stroke */ rgb(255, 72, 255) 2px 0px 0px, rgb(255, 72, 255) 1.75517px 0.958851px 0px, rgb(255, 72, 255) 1.0806px 1.68294px 0px, rgb(255, 72, 255) 0.141474px 1.99499px 0px, rgb(255, 72, 255) -0.832294px 1.81859px 0px, rgb(255, 72, 255) -1.60229px 1.19694px 0px, rgb(255, 72, 255) -1.97998px 0.28224px 0px, rgb(255, 72, 255) -1.87291px -0.701566px 0px, rgb(255, 72, 255) -1.30729px -1.5136px 0px, rgb(255, 72, 255) -0.421592px -1.95506px 0px, rgb(255, 72, 255) 0.567324px -1.91785px 0px, rgb(255, 72, 255) 1.41734px -1.41108px 0px, rgb(255, 72, 255) 1.92034px -0.558831px 0px,
-        /* glow shadow */ 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 0px 15px rgb(255, 72, 255);
-    font-family: Orbitron;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 90px;
-}
-
-section#WhatWeOffer #text3 {
-    font-family: 'Orbitron';
-    font-size: 16px;
-    text-align: center;
-    color: #FFFF;
-    padding-top: 50px;
-}
-
-
-section#WhatWeOffer .divimages2 {
+section#WhatWeOffer div.imagesCardsContainer div.imageCard {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-}
-
-section#WhatWeOffer .image4 {
-    width: 500px;
-    height: 400px;
-    background: url(./src/images/image4.png);
+    align-content: center;
+    text-align: center;
+    width: 400px;
+    height: 350px;
     background-repeat: no-repeat;
-    padding-right: 40px;
-
+    background-size: cover;
+    background-position: center;
+    /* background-color: rgba(121, 121, 121, 0.555); */
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 15px;
+    transition: 0.2s;
 }
 
-section#WhatWeOffer #titre4 {
+section#WhatWeOffer div.imagesCardsContainer div.imageCard:hover {
+    transform: scale(1.1);
+}
+
+section#WhatWeOffer div.imagesCardsContainer div.imageCard.image1 {
+    background-image: url(./src/images/image1.png);
+}
+section#WhatWeOffer div.imagesCardsContainer div.imageCard.image2 {
+    background-image: url(./src/images/image2.png);
+}
+section#WhatWeOffer div.imagesCardsContainer div.imageCard.image3 {
+    background-image: url(./src/images/image3.png);
+}
+section#WhatWeOffer div.imagesCardsContainer div.imageCard.image4 {
+    background-image: url(./src/images/image4.png);
+}
+section#WhatWeOffer div.imagesCardsContainer div.imageCard.image5 {
+    background-image: url(./src/images/image5.png);
+}
+section#WhatWeOffer div.imagesCardsContainer div.imageCard.image6 {
+    background-image: url(./src/images/image6.png);
+}
+
+
+section#WhatWeOffer div.imagesCardsContainer div.imageCard p.title {
     color: #FFF;
+    font-family: Orbitron;
+    text-align: center;
+    font-size: var(--text-font-size);
+    line-height: var(--line-height);
     text-shadow: /* text stroke */ rgb(255, 72, 255) 2px 0px 0px, rgb(255, 72, 255) 1.75517px 0.958851px 0px, rgb(255, 72, 255) 1.0806px 1.68294px 0px, rgb(255, 72, 255) 0.141474px 1.99499px 0px, rgb(255, 72, 255) -0.832294px 1.81859px 0px, rgb(255, 72, 255) -1.60229px 1.19694px 0px, rgb(255, 72, 255) -1.97998px 0.28224px 0px, rgb(255, 72, 255) -1.87291px -0.701566px 0px, rgb(255, 72, 255) -1.30729px -1.5136px 0px, rgb(255, 72, 255) -0.421592px -1.95506px 0px, rgb(255, 72, 255) 0.567324px -1.91785px 0px, rgb(255, 72, 255) 1.41734px -1.41108px 0px, rgb(255, 72, 255) 1.92034px -0.558831px 0px,
         /* glow shadow */ 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 0px 15px rgb(255, 72, 255);
-    font-family: Orbitron;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 90px;
 }
 
-section#WhatWeOffer #text4 {
-    font-family: 'Orbitron';
-    font-size: 16px;
-    text-align: center;
+section#WhatWeOffer div.imagesCardsContainer div.imageCard p.text {
     color: #FFFF;
-    padding-top: 70px;
-}
-
-section#WhatWeOffer .image5 {
-    width: 500px;
-    height: 400px;
-    background: url(./src/images/image5.png);
-    background-repeat: no-repeat;
-    padding-right: 40px;
-
-}
-
-section#WhatWeOffer #titre5 {
-    color: #FFF;
-    text-shadow: /* text stroke */ rgb(255, 72, 255) 2px 0px 0px, rgb(255, 72, 255) 1.75517px 0.958851px 0px, rgb(255, 72, 255) 1.0806px 1.68294px 0px, rgb(255, 72, 255) 0.141474px 1.99499px 0px, rgb(255, 72, 255) -0.832294px 1.81859px 0px, rgb(255, 72, 255) -1.60229px 1.19694px 0px, rgb(255, 72, 255) -1.97998px 0.28224px 0px, rgb(255, 72, 255) -1.87291px -0.701566px 0px, rgb(255, 72, 255) -1.30729px -1.5136px 0px, rgb(255, 72, 255) -0.421592px -1.95506px 0px, rgb(255, 72, 255) 0.567324px -1.91785px 0px, rgb(255, 72, 255) 1.41734px -1.41108px 0px, rgb(255, 72, 255) 1.92034px -0.558831px 0px,
-        /* glow shadow */ 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 0px 15px rgb(255, 72, 255);
-    font-family: Orbitron;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 115px;
-}
-
-section#WhatWeOffer #text5 {
     font-family: 'Orbitron';
-    font-size: 16px;
     text-align: center;
-    color: #FFFF;
-    padding-top: 50px;
+    font-size: var(--small-text-font-size);
+    line-height: var(--line-height);
 }
 
-section#WhatWeOffer .image6 {
-    width: 500px;
-    height: 400px;
-    background: url(./src/images/image6.png);
-    background-repeat: no-repeat;
-    padding-right: 40px;
-
+@media screen and (max-width: 1385px) {
+    section#WhatWeOffer div.imagesCardsContainer div.imageCard {
+        width: 350px;
+        height: 300px;
+    }
 }
 
-section#WhatWeOffer #titre6 {
-    color: #FFF;
-    text-shadow: /* text stroke */ rgb(255, 72, 255) 2px 0px 0px, rgb(255, 72, 255) 1.75517px 0.958851px 0px, rgb(255, 72, 255) 1.0806px 1.68294px 0px, rgb(255, 72, 255) 0.141474px 1.99499px 0px, rgb(255, 72, 255) -0.832294px 1.81859px 0px, rgb(255, 72, 255) -1.60229px 1.19694px 0px, rgb(255, 72, 255) -1.97998px 0.28224px 0px, rgb(255, 72, 255) -1.87291px -0.701566px 0px, rgb(255, 72, 255) -1.30729px -1.5136px 0px, rgb(255, 72, 255) -0.421592px -1.95506px 0px, rgb(255, 72, 255) 0.567324px -1.91785px 0px, rgb(255, 72, 255) 1.41734px -1.41108px 0px, rgb(255, 72, 255) 1.92034px -0.558831px 0px,
-        /* glow shadow */ 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 0px 15px rgb(255, 72, 255);
-    font-family: Orbitron;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 115px;
+@media screen and (max-width: 1215px) {
+    section#WhatWeOffer div.imagesCardsContainer div.imageCard {
+        width: 300px;
+        height: 250px;
+        border-radius: 15px;
+        padding: 10px;
+    }
 }
 
-section#WhatWeOffer #text6 {
-    font-family: 'Orbitron';
-    font-size: 16px;
-    text-align: center;
-    color: #FFFF;
-    padding-top: 60px;
+@media screen and (max-width: 1050px) {
+    section#WhatWeOffer div.imagesCardsContainer div.imageCard {
+        width: 250px;
+        height: 200px;
+        border-radius: 10px;
+        padding: 8px;
+    }
 }
 
-@media only screen and (max-width: 1450px) {
-    section#WhatWeOffer {
+@media screen and (max-width: 600px) {
+    section#WhatWeOffer div.imagesCardsContainer div.imageCard {
+        width: 200px;
+        height: 150px;
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section#WhatWeOffer div.imagesCardsContainer {
+        height: 60%;
+        margin-block-start: 120px;
         overflow: auto;
+        /* justify-content: flex-start; */
     }
-    section#WhatWeOffer .divimages {
-        flex-direction: column;
+}
+
+@media screen and (max-width: 475px) {
+    section#WhatWeOffer div.imagesCardsContainer div.imageCard {
+        width: 150px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-height: 845px) {
+    section#WhatWeOffer div.imagesCardsContainer {
+        height: 70%;
+        margin-block-start: 150px;
+    }
+}
+
+@media screen and (max-height: 780px) {
+    section#WhatWeOffer div.imagesCardsContainer {
+        overflow: auto;
+        /* justify-content: flex-start; */
+    }
+}
+
+@media screen and (max-height: 530px) {
+    section#WhatWeOffer div.imagesCardsContainer {
+        height: 65%;
+        margin-block-start: 130px;
+    }
+}
+
+@media screen and (max-height: 390px) {
+    section#WhatWeOffer div.imagesCardsContainer {
+        height: 55%;
+        margin-block-start: 120px;
+    }
+}
+
+@media screen and (min-width: 1215px) and (max-height: 845px),
+screen and (max-width: 1215px) and (max-height: 740px) {
+    section#WhatWeOffer div.imagesCardsContainer div.imageCard {
+        width: 350px;
+        height: 200px;
+    }
+    
+    :root {
+        --text-font-size: 1em;
+        --small-text-font-size: 0.6em;
+    }
+}
+
+@media screen and (min-width: 1400px) and (max-height: 845px) {
+    section#WhatWeOffer div.imagesCardsContainer div.imageCard {
+        width: 400px;
+        height: 200px;
+    }
+}
+
+@media screen and (min-width: 1215px) and (max-height: 595px),
+screen and (max-width: 1215px) and (max-height: 600px) {
+    section#WhatWeOffer div.imagesCardsContainer div.imageCard {
+        width: 165px;
+        height: 150px;
+    }
+    
+    :root {
+        --text-font-size: 0.65em;
+        --small-text-font-size: 0.25em;
+    }
+}
+
+@media screen and (min-width: 1565px) and (max-height: 595px) {
+    section#WhatWeOffer div.imagesCardsContainer div.imageCard {
+        width: 220px;
+        height: 180px;
     }
 
-    section#WhatWeOffer .divimages2 {
-        flex-direction: column;
+    :root {
+        --text-font-size: 0.8em;
+        --small-text-font-size: 0.4em;
     }
-
-    section#WhatWeOffer .image1 {
-        padding-bottom: 40px;
-    }
-
-    section#WhatWeOffer .image2 {
-        padding-bottom: 40px;
-    }
-
-    section#WhatWeOffer .image4 {
-        padding-bottom: 40px;
-    }
-
-    section#WhatWeOffer .image5 {
-        padding-bottom: 40px;
-    }
-
 }

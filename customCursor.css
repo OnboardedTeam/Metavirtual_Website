@@ -29,10 +29,10 @@ body:not([mobileVersion]):has(:is(button, a, input[type=submit], input[type=butt
 } :is(button, a, input[type=submit], input[type=button]):hover {
     cursor: pointer;
 }
-
+/* 
 body:not([mobileVersion]):has(div.member img.photo:hover) .custom-cursor {
     width: 148px;
-}
+} */
 
 body:not([mobileVersion]):has(:is(p, h1, h2, h3, h4, h5, h6, text, textarea, input:is([type=text], [type=email], [type=name])):hover) .custom-cursor {
     opacity: 0;

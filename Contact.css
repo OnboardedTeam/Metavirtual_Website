@@ -4,9 +4,9 @@ section#Contact {
 
 section#Contact .formulaire {
     display: flex;
-    width: 90%;
+    width: 80%;
     height: 80%;
-    flex: 0 0 90%;
+    flex: 0 0 80%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -166,8 +166,11 @@ screen and (max-width: 700px) {
     }
 }
 
-@media screen and (max-width: 700px) {
-    
+@media screen and (max-width: 1115px) {
+    section#Contact .formulaire {
+        width: 90%;
+        flex: 0 0 90%;
+    }
 }
 
 @media screen and (max-width: 500px) {

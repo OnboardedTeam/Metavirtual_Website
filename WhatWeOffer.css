@@ -163,8 +163,10 @@ screen and (max-width: 1215px) and (max-height: 740px) {
     }
     
     :root {
-        --text-font-size: 1em;
-        --small-text-font-size: 0.6em;
+        /* --text-font-size: 1em;
+        --small-text-font-size: 0.6em; */
+        --text-font-size: 0.7em;
+        --small-text-font-size: 0.3em;
     }
 }
 

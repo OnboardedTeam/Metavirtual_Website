@@ -145,6 +145,7 @@ header {
     font-size: var(--text-font-size);
     line-height: var(--line-height);
     letter-spacing: 0.1em;
+    transition: 0.3s;
 }
 
 body[mobileVersion] header {
@@ -160,6 +161,7 @@ header a img.logo {
     height: 60px;
     margin-left: 20px;
     transition: 0.2s;
+    object-fit: contain;
 }
 
 header a img.logo:hover {
@@ -177,6 +179,32 @@ header a.sectionLink {
 header a.sectionLink[selected] {
     text-shadow: /* text stroke */ rgb(255, 72, 255) 2px 0px 0px, rgb(255, 72, 255) 1.75517px 0.958851px 0px, rgb(255, 72, 255) 1.0806px 1.68294px 0px, rgb(255, 72, 255) 0.141474px 1.99499px 0px, rgb(255, 72, 255) -0.832294px 1.81859px 0px, rgb(255, 72, 255) -1.60229px 1.19694px 0px, rgb(255, 72, 255) -1.97998px 0.28224px 0px, rgb(255, 72, 255) -1.87291px -0.701566px 0px, rgb(255, 72, 255) -1.30729px -1.5136px 0px, rgb(255, 72, 255) -0.421592px -1.95506px 0px, rgb(255, 72, 255) 0.567324px -1.91785px 0px, rgb(255, 72, 255) 1.41734px -1.41108px 0px, rgb(255, 72, 255) 1.92034px -0.558831px 0px,
     /* glow shadow */ 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 0px 15px rgb(255, 72, 255);
+}
+
+a.burgerMenu {
+    position: fixed;
+    display: flex;
+    width: 60px;
+    height: 35px;
+    margin: 20px;
+    gap: 10px;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    z-index: 5;
+    transform: translateY(-160%);
+    transition: 0.2s;
+}
+
+span.burgerMenuButton {
+    display: block;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    background-color: white;
+    border-radius: 25px;
 }
 
 /*---------------------------------------/
@@ -379,8 +407,21 @@ header a.sectionLink[selected] {
     }
 
     header {
+        transform: translateY(-100%);
         flex-wrap: wrap;
         justify-content: space-evenly;
+    }
+
+    
+    a.burgerMenu {
+        transform: translateY(0%);
+    }
+    a.burgerMenu:is(:active, :focus, :focus-within) {
+        transform: translateY(-160%);
+    }
+
+    a.burgerMenu:is(:active, :focus, :focus-within) + header {
+        transform: translateY(0%);
     }
 }
 

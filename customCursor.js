@@ -1,15 +1,5 @@
-window.addEventListener('mousemove', function (e) {
-    var customCursor = document.querySelector('.custom-cursor');
-    var windowWidth = window.innerWidth;
-    var windowHeight = window.innerHeight;
-
-    requestAnimationFrame(() => {
-        customCursor.style.left = (e.clientX / windowWidth * 100) + '%';
-        customCursor.style.top = (e.clientY / windowHeight * 100) + '%';
-    });
-
-    showCursor();
-});
+document.addEventListener('mouseover', displayCursor); //at load
+window.addEventListener('mousemove', displayCursor); //while moving cursor
 
 //hide cursor on losing page focus
 window.addEventListener("blur", (event) => {
@@ -17,7 +7,7 @@ window.addEventListener("blur", (event) => {
         if (document.hidden) {
             hideCursor();
         }
-    }, 100);
+    }, 85);
 });
 
 //hide cursor on losing page focus
@@ -32,4 +22,16 @@ function hideCursor() {
 function showCursor() {
     var customCursor = document.querySelector('.custom-cursor');
     customCursor.removeAttribute("outPage");
+}
+function displayCursor(e) {
+    var customCursor = document.querySelector('.custom-cursor');
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
+
+    requestAnimationFrame(() => {
+        customCursor.style.left = (e.clientX / windowWidth * 100) + '%';
+        customCursor.style.top = (e.clientY / windowHeight * 100) + '%';
+    });
+
+    showCursor();
 }

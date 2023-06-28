@@ -3,40 +3,59 @@ section#Contact {
 }
 
 section#Contact .formulaire {
-    width: 1150px;
-    height: 709px;
+    display: flex;
+    width: 80%;
+    height: 80%;
+    flex: 0 0 80%;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     border: 1px solid white;
     border-radius: 25px;
     margin: auto;
-    margin-top: 200px;
-    display: flex;
+    margin-block-start: 120px;
+    overflow: hidden;
 }
 
 section#Contact .imagerobot {
-    width: 350px;
-    height: 709px;
+    width: 100%;
+    height: 100%;
+    flex: 1;
     border-right: 1px solid white;
     background: url(./src/images/imagerobot.png);
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 0.1s;
 }
 
 section#Contact .contactform {
-    width: 780px;
-    height: 709px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    flex: 3;
     text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5px;
 }
 
-section#Contact #titre {
+section#Contact .titre {
     text-shadow: /* text stroke */ rgb(255, 72, 255) 2px 0px 0px, rgb(255, 72, 255) 1.75517px 0.958851px 0px, rgb(255, 72, 255) 1.0806px 1.68294px 0px, rgb(255, 72, 255) 0.141474px 1.99499px 0px, rgb(255, 72, 255) -0.832294px 1.81859px 0px, rgb(255, 72, 255) -1.60229px 1.19694px 0px, rgb(255, 72, 255) -1.97998px 0.28224px 0px, rgb(255, 72, 255) -1.87291px -0.701566px 0px, rgb(255, 72, 255) -1.30729px -1.5136px 0px, rgb(255, 72, 255) -0.421592px -1.95506px 0px, rgb(255, 72, 255) 0.567324px -1.91785px 0px, rgb(255, 72, 255) 1.41734px -1.41108px 0px, rgb(255, 72, 255) 1.92034px -0.558831px 0px,
         /* glow shadow */ 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 0px 15px rgb(255, 72, 255);
     color: #FFF;
     font-family: 'Orbitron';
-    font-size: 20px;
+    font-size: var(--title-text-font-size);
     text-align: center;
     padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
+/* 
 section#Contact .icons {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -48,72 +67,164 @@ section#Contact #facebook {
 
 section#Contact #insta {
     padding-right: 60px;
-}
+} */
 
-section#Contact .form {
+section#Contact form {
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 25px;
+    flex: 1;
+    gap: 5px;
 }
 
-section#Contact .fullname {
-    padding-bottom: 10px;
-}
-
-section#Contact #fullname {
-    background-color: #010209;
-    width: 285px;
-    height: 40px;
+section#Contact input:is([type="text"], [type="email"], [type="name"]) {
+    width: 50%;
     border-radius: 25px;
+    padding-block: 15px;
+    padding-inline: 40px;
+    box-sizing: border-box;
+
+    background-color: #010209;
     color: white;
 }
 
-section#Contact .email {
-    padding-bottom: 10px;
-}
-
-section#Contact #email {
-    background-color: #010209;
-    width: 285px;
-    height: 40px;
+section#Contact textarea {
+    width: 80%;
+    min-height: 120px;
+    height: 235px;
+    max-height: 345px;
+    resize: vertical;
     border-radius: 25px;
-    color: white;
-}
-
-section#Contact #message {
+    box-sizing: border-box;
+    padding: 15px;
+    
+    background-color: #010209;
     text-align: left;
-    background-color: #010209;
-    width: 500px;
-    height: 200px;
-    border-radius: 25px;
     color: white;
 }
 
-section#Contact .button {
-    padding-top: 40px;
-    border-radius: 25px;
-}
-
-section#Contact #button {
-    border-radius: 100px;
-    padding: 20px 50px 20px 50px;
-    background: #8424844D;
+section#Contact input[type="submit"] {
+    width: 50%;
     border: none;
+    border-radius: 100px;
+    padding-block: 20px;
+    padding-inline: 50px;
+    box-sizing: border-box;
+    background-color: #8424844D;
 
-    color: #FFFFFF;
+    color: white;
     font-family: 'Orbitron';
-    font-style: bold;
     font-weight: 700;
     font-size: var(--text-font-size);
     line-height: var(--line-height);
     letter-spacing: 0.1em;
     cursor: pointer;
-    margin: auto;
     transition: 0.3s;
 }
 
-section#Contact #button:hover {
-    background: #842484;
+section#Contact input[type="submit"]:hover {
+    background-color: #842484;
     box-shadow: 0px 0px 25px 0px #842484;
-    color: #FFF;
     text-shadow: 0px 0px 25px #FFF, 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+@media screen and (max-width: 1000px) and (min-height: 1000px),
+screen and (max-width: 500px) and (min-height: 500px) {
+    section#Contact .imagerobot {
+        width: 0%;
+        flex: 0;
+    }
+
+    section#Contact input:is([type="text"], [type="email"], [type="name"], [type="submit"]) {
+        width: 90%;
+        padding: 15px;
+    }
+    section#Contact textarea {
+        width: 90%;
+        min-height: 120px;
+        height: 345px;
+        max-height: 345px;
+    }
+}
+
+@media screen and (max-width: 500px) and (max-height: 500px),
+screen and (max-width: 700px) {
+    section#Contact input:is([type="text"], [type="email"], [type="name"], [type="submit"]) {
+        width: 90%;
+        padding: 15px;
+    }
+
+    section#Contact textarea {
+        width: 90%;
+        min-height: 120px;
+        height: 345px;
+        max-height: 345px;
+    }
+}
+
+@media screen and (max-width: 1115px) {
+    section#Contact .formulaire {
+        width: 90%;
+        flex: 0 0 90%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section#Contact .formulaire {
+        height: 50%;
+        border-radius: 15px;
+        margin-block-start: 225px;
+    }
+    
+    section#Contact .contactform {
+        overflow: auto;
+        justify-content: flex-start;
+    }
+
+    section#Contact textarea {
+        height: initial;
+    }
+    
+    section#Contact input[type="submit"] {
+        padding-inline: initial;
+    }
+}
+
+@media screen and (max-height: 780px) {
+    section#Contact .contactform {
+        overflow: auto;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-height: 630px) {
+    section#Contact .formulaire {
+        height: 50%;
+        margin-block-start: 180px;
+    }
+}
+
+@media screen and (max-height: 380px) {
+    section#Contact .formulaire {
+        height: 45%;
+        margin-block-start: 150px;
+    }
+}
+
+@media screen and (max-height: 630px) and (min-width: 1000px){
+    section#Contact .imagerobot {
+        width: 50%;
+        flex: 0.5;
+    }
+}
+/* @media screen and (min-width: 500px) and (min-height: 550px) {
+    section#Contact .formulaire {
+        height: 50%;
+        border-radius: 15px;
+        margin-block-start: 225px;
+    }
+} */

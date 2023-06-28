@@ -26,7 +26,7 @@ section#ourWork p {
     letter-spacing: 0.1rem;
 }
 
-section {
+section#ourWork {
     display: flex;
     justify-content: center;
     position: relative;
@@ -45,7 +45,7 @@ section#ourWork .cards {
     padding: 15px;
     box-sizing: border-box;
     color: white;
-    margin-top: 15%;
+    margin-top: 8%;
     flex: 1;
 }
 
@@ -96,3 +96,71 @@ section#ourWork div.cards div.card div.cardContainer.video :is(video, img, ifram
     object-fit: cover;
     pointer-events: none;
 }
+
+/************************************* Media queries ********************************/
+
+@media screen and (max-width: 1520px) {
+    section#ourWork .cards .card {
+        width: 300px;
+    }
+    section#ourWork .cards {
+        gap: 11%;
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    section#ourWork .cards .card {
+        width: 255px;
+        }
+    section#ourWork .cards {
+        gap: 8%;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    section#ourWork .cards .card {
+        width: 220px;
+    }
+    section#ourWork .cards {
+        gap: 5%;
+    }
+}
+
+@media screen and (max-width: 795px) {
+    section#ourWork .cards .card {
+        width: 150px;
+    }
+    section#ourWork h2 {
+        font-size: 0.9rem;
+    }
+    section#ourWork p {
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    section#ourWork .cards .card {
+        width: 130px;
+    }
+    section#ourWork h2 {
+        font-size: 0.7rem;
+    }
+    section#ourWork p {
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section#ourWork .cards .card {
+        width: 110px;
+    }
+    section#ourWork h2 {
+        font-size: 0.4rem;
+        margin: 10px 0;
+    }
+    section#ourWork p {
+        font-size: 0.3rem;
+    }
+}
+
+/************************************************************************************/

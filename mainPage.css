@@ -2,13 +2,18 @@ div.mainPage {
     display: flex;
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 10;
-    position: fixed;
+    z-index: 2;
+    position: relative;
+    flex: 0 0 100%;
     background: black;
+}
+
+body:not([mobileVersion]) *:is(section) {
+    top: 100%;
+    right: 100%;
 }
 
 body[locked], body[locked] > *:not(div.mainPage) * {
@@ -16,7 +21,7 @@ body[locked], body[locked] > *:not(div.mainPage) * {
 }
 
 div.mainPage .video-bg {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -56,7 +61,7 @@ div.mainPage :is(h1, h2) {
     text-align: center;
     font-family: Orbitron;
     font-weight: 700;
-    font-size: 2.25rem;
+    font-size: var(--title-font-size);
     letter-spacing: 0.225rem;
 }
 
@@ -210,14 +215,4 @@ div.mainPage button:hover {
 
 @media only screen and (min-width: 737px) and (max-width: 1024px) and (orientation: landscape) {
 
-}
-
-body[mobileVersion] div.mainPage {
-    position: relative;
-    flex: 0 0 100%;
-    z-index: 3;
-}
-
-body[mobileVersion] .video-bg {
-    position: absolute;
 }

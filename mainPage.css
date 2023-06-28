@@ -6,8 +6,14 @@ div.mainPage {
     flex-direction: column;
     justify-content: space-between;
     z-index: 2;
-    position: fixed;
+    position: relative;
+    flex: 0 0 100%;
     background: black;
+}
+
+body:not([mobileVersion]) *:is(section) {
+    top: 100%;
+    right: 100%;
 }
 
 body[locked], body[locked] > *:not(div.mainPage) * {
@@ -15,7 +21,7 @@ body[locked], body[locked] > *:not(div.mainPage) * {
 }
 
 div.mainPage .video-bg {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -209,14 +215,4 @@ div.mainPage button:hover {
 
 @media only screen and (min-width: 737px) and (max-width: 1024px) and (orientation: landscape) {
 
-}
-
-body[mobileVersion] div.mainPage {
-    position: relative;
-    flex: 0 0 100%;
-    z-index: 2;
-}
-
-body[mobileVersion] .video-bg {
-    position: absolute;
 }

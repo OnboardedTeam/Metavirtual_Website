@@ -34,7 +34,7 @@ if (window.mobileCheck()) {
 document.addEventListener('DOMContentLoaded', () => {
     let discoverButton = document.getElementById("discoverButton");
     if (discoverButton && discoverButton != null) {
-        if (!window.mobileCheck()) {
+        if (false && !window.mobileCheck()) { //old stuff disabled by update
             document.body.setAttribute("locked", "");
             discoverButton.addEventListener("click", (event) => {
                 let mainPage = document.getElementById("mainPage");
@@ -87,10 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
 /                         /
 /------------------------*/
 
+var hashTarget = null;
 window.addEventListener('click', (event) => {
-    const target = event.target.closest('header a.sectionLink');
+    const target = event.target.closest('header a[href^="#"]');
     if (target) {
-        const links = document.querySelectorAll('header a.sectionLink');
+        const links = document.querySelectorAll('header a[href^="#"]');
 
         links.forEach(link => {
             link.removeAttribute('selected');
@@ -102,6 +103,7 @@ window.addEventListener('click', (event) => {
         var targetSection = document.querySelector(target.getAttribute('href'));
         var scrollOffset = targetSection.offsetWidth / 2;
 
+        hashTarget = targetSection;
         targetSection.scrollIntoView({
             behavior: 'smooth',
             block: 'center',
@@ -113,9 +115,10 @@ window.addEventListener('click', (event) => {
 
 window.addEventListener('hashchange', () => {
     const hash = window.location.hash;
-    const target = document.querySelector(`header a.sectionLink[href="${hash}"]`);
+    const target = document.querySelector(`header a[href="${hash}"]`);
+    hashTarget = target;
 
-    const links = document.querySelectorAll('header a.sectionLink');
+    const links = document.querySelectorAll('header a[href^="#"]');
 
     links.forEach(link => {
         link.removeAttribute('selected');
@@ -146,24 +149,30 @@ function isElementVisible(elem) {
     let pointContainer = document.elementFromPoint(elemCenter.x, elemCenter.y);
     do {
         if (pointContainer === elem) return true;
-    } while (pointContainer = pointContainer.parentNode);
+    } while (pointContainer = pointContainer?.parentNode);
     return false;
 }
 
 function checkSection() {
-    const sections = document.querySelectorAll('section'); // Sélectionnez toutes les sections
+    const sections = Array.from(document.querySelectorAll('section')); // Sélectionnez toutes les sections
+    sections.push(document.querySelector("div#mainPage"))
 
     sections.forEach(section => {
-        const link = document.querySelector(`header a.sectionLink[href="#${section.id}"]`); // Trouvez le lien correspondant à la section
+        const link = document.querySelector(`header a[href="#${section.id}"]`); // Trouvez le lien correspondant à la section
 
         if (link && isElementVisible(section)) { // Vérifiez si la section est visible
-            const links = document.querySelectorAll('header a.sectionLink');
+            const links = document.querySelectorAll('header a[href^="#"]');
 
             links.forEach(link => {
                 link.removeAttribute('selected');
             });
 
             link.setAttribute('selected', '');
+            if (hashTarget == section) {
+                setTimeout(() => {
+                    hashTarget = null;
+                }, 450);
+            }
         }
     });
 };
@@ -209,7 +218,7 @@ function isElementOrParentScrollable(element) {
     return null; // No scrollbar found in any parent or body element reached, or an overflow-hidden class is present
 }
 
-function getScrollPosition(element) {
+function getScrollTop(element) {
     if (element.scrollTop === 0) {
         return -1; // Scroll position at the start
     } else if (element.scrollTop + element.clientHeight >= element.scrollHeight) {
@@ -219,16 +228,105 @@ function getScrollPosition(element) {
     }
 }
 
+function getScrollLeft(element) {
+    if (element.scrollLeft === 0) {
+        return -1; // Scroll position at the start
+    } else if (element.scrollLeft + element.clientWidth >= element.scrollWidth) {
+        return 1; // Scroll position at the end
+    } else {
+        return 0; // Scroll position in between
+    }
+}
+
+function getScrollPosition(element) {
+    return {top: getScrollTop(element), left: getScrollLeft(element)};
+}
+
+var bodyScrollContext = 'vertical';
+function defineBodyScrollContext(load) {
+    let element = document.body;
+    let bodyScrollPosition = getScrollPosition(element);
+    if (bodyScrollContext == 'both' || load) {
+        if (bodyScrollPosition.top != 1) {
+            bodyScrollContext = 'vertical';
+        } else if (bodyScrollPosition.left != -1) {
+            bodyScrollContext = 'horizontal';
+        }
+    } else if (bodyScrollContext == 'vertical') {
+        if (bodyScrollPosition.top == 1) {
+            bodyScrollContext = 'both';
+        } else if (bodyScrollPosition.left != -1 && hashTarget == null) {
+            element.style.scrollBehavior = "initial";
+            element.scrollLeft = 0;
+            element.style.scrollBehavior = "";
+        }
+    } else if (bodyScrollContext == 'horizontal') {
+        if (bodyScrollPosition.left == -1) {
+            bodyScrollContext = 'both';
+        } else if (bodyScrollPosition.top != 1 && hashTarget == null) {
+            element.style.scrollBehavior = "initial";
+            element.scrollTop = element.scrollHeight - element.clientHeight;
+            element.style.scrollBehavior = "";
+        }
+    }
+    if (hashTarget != null) {
+        if (bodyScrollPosition.top == 0 && bodyScrollPosition.left == 0) {
+            bodyScrollContext = 'both';
+        }
+    }
+    if (bodyScrollContext == 'both') {
+        element.style.overflowY = "auto";
+        element.style.overflowX = "auto";
+    } else if (bodyScrollContext == 'vertical') {
+        element.style.overflowY = "auto";
+        element.style.overflowX = "hidden";
+    } else if (bodyScrollContext == 'horizontal') {
+        element.style.overflowY = "hidden";
+        element.style.overflowX = "auto";
+    }
+}
+
 if (!window.mobileCheck()) {
     //Desktop version page display
     
+    // modern Chrome requires { passive: false } when adding event
+    var supportsPassive = false;
+    try {
+        window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+            get: function () { supportsPassive = true; }
+        }));
+    } catch (e) { }
+
+    var wheelOpt = supportsPassive ? { passive: false } : false;
+    var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
     document.addEventListener('DOMContentLoaded', () => {
-        document.addEventListener('wheel', (event) => {
+        document.body.addEventListener('scroll', (scrollEvent) => {
+            defineBodyScrollContext();
+        }, wheelOpt);
+        defineBodyScrollContext(true);
+
+        document.addEventListener(wheelEvent, (event) => {
+            if (event.ctrlKey) {
+                return;
+            }
             let scrolling = true;
             let deltaY = event.deltaY;
+
+            var hasToReturn = false;
+            var hasToPrevent = false;
+            let bodyScrollPosition = getScrollPosition(document.body);
+            if (deltaY > 0 && bodyScrollPosition.top != 1) {
+                hasToReturn = true;
+            } else if (deltaY < 0 && bodyScrollPosition.left != -1) {
+                hasToPrevent = true;
+            } else if (deltaY < 0 && bodyScrollPosition.left == -1) {
+                hasToReturn = true;
+            }
+
             potentialScrolling = isElementOrParentScrollable(event.target);
             if (potentialScrolling && potentialScrolling != null) {
-                let scrollPosition = getScrollPosition(potentialScrolling);
+                let scrollPosition = getScrollPosition(potentialScrolling).top;
 
                 if (scrollPosition === -1) {
                     //at the start
@@ -240,6 +338,9 @@ if (!window.mobileCheck()) {
                     //between
                     scrolling = false;
                 }
+            } else {
+                if (hasToPrevent) event.preventDefault();
+                if (hasToReturn) return;
             }
             if (scrolling) {
                 if (nextScrollTo == null) {
@@ -247,9 +348,10 @@ if (!window.mobileCheck()) {
                 }
                 nextScrollTo += deltaY * 2;
             }
-        });
+        }, wheelOpt);
+        
     });
-    
+  
     var nextScrollTo = null;
     setInterval(() => {
         if (nextScrollTo != null && !document.body.hasAttribute('locked')) {
@@ -263,25 +365,38 @@ if (!window.mobileCheck()) {
             document.body.scrollTo(options);
         });
     }
-    function scrollToMax() {
-        // Défilement horizontal vers le maximum
+    function scrollToMax(down) {
         var maxScrollLeft = document.body.scrollWidth - document.body.clientWidth;
-        scrollTo({
-            left: maxScrollLeft,
-            behavior: 'smooth'
-        });
+        var maxScrollTop = document.body.scrollHeight - document.body.clientHeight;
+        
+        let scrollOptions = { behavior: 'smooth' };
+        if (down) {
+            scrollOptions.top = maxScrollTop;
+        } else {
+            scrollOptions.left = maxScrollLeft;
+        }
+        scrollTo(scrollOptions);
     }
-    function scrollToMin() {
-        scrollTo({
-            left: 0,
-            behavior: 'smooth'
-        });
+    function scrollToMin(down) {
+        let scrollOptions = { behavior: 'smooth' };
+        if (down) {
+            scrollOptions.top = 0;
+        } else {
+            scrollOptions.left = 0;
+        }
+        scrollTo(scrollOptions);
     }
-    function scrollByPage(delta) {
-        scrollTo({
-            left: document.body.scrollLeft + delta,
-            behavior: 'smooth'
-        });
+    function scrollByPage(delta, down) {
+        var maxScrollLeft = document.body.scrollWidth - document.body.clientWidth;
+        var maxScrollTop = document.body.scrollHeight - document.body.clientHeight;
+
+        let scrollOptions = { behavior: 'smooth' };
+        if (down) {
+            scrollOptions.top = document.body.scrollTop + delta;
+        } else {
+            scrollOptions.left = document.body.scrollLeft + delta;
+        }
+        scrollTo(scrollOptions);
     }
     
     
@@ -289,25 +404,27 @@ if (!window.mobileCheck()) {
     document.addEventListener('keydown', (event) => {
         if (isKeyDown == false && !document.body.hasAttribute('locked')) {
             isKeyDown = true;
+            let scrollDown = (bodyScrollContext == 'vertical' ? true : false);
+            let scrollUp = (bodyScrollContext == 'horizontal' ? false : true);
             if (event.key === 'End') {
                 event.preventDefault();
-                scrollToMax();
+                scrollToMax(scrollDown);
             } else if (event.key === 'Home') {
                 event.preventDefault();
-                scrollToMin();
+                scrollToMin(scrollUp);
             } else if (event.key === 'PageDown') {
                 event.preventDefault();
                 if (event.altKey) {
-                    scrollToMax();
+                    scrollToMax(scrollDown);
                 } else {
-                    scrollByPage(500);
+                    scrollByPage(500, scrollDown);
                 }
             } else if (event.key === 'PageUp') {
                 event.preventDefault();
                 if (event.altKey) {
-                    scrollToMin();
+                    scrollToMin(scrollUp);
                 } else {
-                    scrollByPage(-500);
+                    scrollByPage(-500, scrollUp);
                 }
             }
             setTimeout(() => {

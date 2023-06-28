@@ -95,7 +95,7 @@ section#Contact input:is([type="text"], [type="email"], [type="name"]) {
 section#Contact textarea {
     width: 80%;
     min-height: 120px;
-    height: 345px;
+    height: 235px;
     max-height: 345px;
     resize: vertical;
     border-radius: 25px;

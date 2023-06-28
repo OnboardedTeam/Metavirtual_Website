@@ -22,8 +22,7 @@ html, body {
   background: linear-gradient(180deg, #000 0%, #010209 63.54%);
   margin: 0;
   padding: 0;
-  overflow-y: hidden;
-  overflow-x: auto;
+  overflow: auto;
   position: relative;
 }
 
@@ -130,7 +129,7 @@ header {
     align-items: center;
     text-align: center;
     gap: 35px;
-    width: 100%;
+    width: calc(100% - var(--scrollbar-size));
     min-height: 100px;
     padding: 30px;
     box-sizing: border-box;

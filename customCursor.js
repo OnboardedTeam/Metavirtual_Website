@@ -1,5 +1,22 @@
+/******************************************************************\
+|                                                                  |
+|                         Made by NitramO                          |
+|                  Martin Ben Jenec - 27/06/2023                   |
+|                                                                  |
+|                      Custom cursor effect.                       |
+|                        V1.1 - 03/07/2023                         |
+|                                                                  |
+\******************************************************************/
+
+
+
+
+
 document.addEventListener('mouseover', displayCursor); //at load
 window.addEventListener('mousemove', displayCursor); //while moving cursor
+document.body.addEventListener('resize', displayCursor); //at resize
+document.body.addEventListener('zoom', displayCursor); //at zoom
+document.body.addEventListener('scroll', displayCursor); //at scroll
 
 //hide cursor on losing page focus
 window.addEventListener("blur", (event) => {

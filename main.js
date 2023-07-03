@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (animationEvent.animationName == "fadeOut") {
                         mainPage.setAttribute("hidden", "");
                         mainPage.removeAttribute("hidding");
-    
+
                         checkSection();
                     }
                 }, { once: true });
@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     targetSection.scrollIntoView({
                         behavior: 'smooth',
-                        block: 'center',
-                        inline: 'center',
+                        block: 'start',
+                        inline: 'start',
                         scrollLeft: scrollOffset
                     });
                 }
@@ -106,8 +106,8 @@ window.addEventListener('click', (event) => {
         hashTarget = targetSection;
         targetSection.scrollIntoView({
             behavior: 'smooth',
-            block: 'center',
-            inline: 'center',
+            block: 'start',
+            inline: 'start',
             scrollLeft: scrollOffset
         });
     }
@@ -189,254 +189,24 @@ checkSection();
 /-------------------------------*/
 
 
+// MENU BURGER
 
+let burgerMenu = document.querySelector("a.burgerMenu");
+let burgerMenuFocused = false;
 
-
-/*-------------------------------/
-/                                /
-/     HORIZONTAL SCROLL PART     /
-/                                /
-/-------------------------------*/
-
-function hasOverflowHiddenClass(element) {
-    const computedStyles = window.getComputedStyle(element);
-    const overflowValue = computedStyles.getPropertyValue('overflow');
-    return overflowValue != 'auto' && overflowValue != 'overlay' && overflowValue != 'scroll';
-}
-
-function isElementOrParentScrollable(element) {
-    let currentElement = element;
-
-    while (currentElement !== null && currentElement !== document.body) {
-        if ((currentElement !== document.body && (currentElement.scrollHeight > currentElement.clientHeight || currentElement.scrollWidth > currentElement.clientWidth)) && !hasOverflowHiddenClass(currentElement)) {
-            return currentElement; // Scrollbar found and no overflow-hidden class on the element
-        }
-
-        currentElement = currentElement.parentElement;
+burgerMenu.addEventListener("click", (event) => {
+    if (burgerMenuFocused == false) {
+        burgerMenuFocused = true;
+    } else if (document.activeElement == burgerMenu) {
+        burgerMenu.blur();
+        burgerMenuFocused = false;
     }
+});
 
-    return null; // No scrollbar found in any parent or body element reached, or an overflow-hidden class is present
-}
-
-function getScrollTop(element) {
-    if (element.scrollTop === 0) {
-        return -1; // Scroll position at the start
-    } else if (element.scrollTop + element.clientHeight >= element.scrollHeight) {
-        return 1; // Scroll position at the end
-    } else {
-        return 0; // Scroll position in between
-    }
-}
-
-function getScrollLeft(element) {
-    if (element.scrollLeft === 0) {
-        return -1; // Scroll position at the start
-    } else if (element.scrollLeft + element.clientWidth >= element.scrollWidth) {
-        return 1; // Scroll position at the end
-    } else {
-        return 0; // Scroll position in between
-    }
-}
-
-function getScrollPosition(element) {
-    return {top: getScrollTop(element), left: getScrollLeft(element)};
-}
-
-var bodyScrollContext = 'vertical';
-function defineBodyScrollContext(load) {
-    let element = document.body;
-    let bodyScrollPosition = getScrollPosition(element);
-    if (bodyScrollContext == 'both' || load) {
-        if (bodyScrollPosition.top != 1) {
-            bodyScrollContext = 'vertical';
-        } else if (bodyScrollPosition.left != -1) {
-            bodyScrollContext = 'horizontal';
-        }
-    } else if (bodyScrollContext == 'vertical') {
-        if (bodyScrollPosition.top == 1) {
-            bodyScrollContext = 'both';
-        } else if (bodyScrollPosition.left != -1 && hashTarget == null) {
-            element.style.scrollBehavior = "initial";
-            element.scrollLeft = 0;
-            element.style.scrollBehavior = "";
-        }
-    } else if (bodyScrollContext == 'horizontal') {
-        if (bodyScrollPosition.left == -1) {
-            bodyScrollContext = 'both';
-        } else if (bodyScrollPosition.top != 1 && hashTarget == null) {
-            element.style.scrollBehavior = "initial";
-            element.scrollTop = element.scrollHeight - element.clientHeight;
-            element.style.scrollBehavior = "";
-        }
-    }
-    if (hashTarget != null) {
-        if (bodyScrollPosition.top == 0 && bodyScrollPosition.left == 0) {
-            bodyScrollContext = 'both';
-        }
-    }
-    if (bodyScrollContext == 'both') {
-        element.style.overflowY = "auto";
-        element.style.overflowX = "auto";
-    } else if (bodyScrollContext == 'vertical') {
-        element.style.overflowY = "auto";
-        element.style.overflowX = "hidden";
-    } else if (bodyScrollContext == 'horizontal') {
-        element.style.overflowY = "hidden";
-        element.style.overflowX = "auto";
-    }
-}
-
-if (!window.mobileCheck()) {
-    //Desktop version page display
-    
-    // modern Chrome requires { passive: false } when adding event
-    var supportsPassive = false;
-    try {
-        window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-            get: function () { supportsPassive = true; }
-        }));
-    } catch (e) { }
-
-    var wheelOpt = supportsPassive ? { passive: false } : false;
-    var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-
-    document.addEventListener('DOMContentLoaded', () => {
-        document.body.addEventListener('scroll', (scrollEvent) => {
-            defineBodyScrollContext();
-        }, wheelOpt);
-        defineBodyScrollContext(true);
-
-        document.addEventListener(wheelEvent, (event) => {
-            if (event.ctrlKey) {
-                return;
-            }
-            let scrolling = true;
-            let deltaY = event.deltaY;
-
-            var hasToReturn = false;
-            var hasToPrevent = false;
-            let bodyScrollPosition = getScrollPosition(document.body);
-            if (deltaY > 0 && bodyScrollPosition.top != 1) {
-                hasToReturn = true;
-            } else if (deltaY < 0 && bodyScrollPosition.left != -1) {
-                hasToPrevent = true;
-            } else if (deltaY < 0 && bodyScrollPosition.left == -1) {
-                hasToReturn = true;
-            }
-
-            potentialScrolling = isElementOrParentScrollable(event.target);
-            if (potentialScrolling && potentialScrolling != null) {
-                let scrollPosition = getScrollPosition(potentialScrolling).top;
-
-                if (scrollPosition === -1) {
-                    //at the start
-                    deltaY = Math.min(0, deltaY);
-                } else if (scrollPosition === 1) {
-                    //at the end
-                    deltaY = Math.max(0, deltaY);
-                } else {
-                    //between
-                    scrolling = false;
-                }
-            } else {
-                if (hasToPrevent) event.preventDefault();
-                if (hasToReturn) return;
-            }
-            if (scrolling) {
-                if (nextScrollTo == null) {
-                    nextScrollTo = 0;
-                }
-                nextScrollTo += deltaY * 2;
-            }
-        }, wheelOpt);
-        
-    });
-  
-    var nextScrollTo = null;
-    setInterval(() => {
-        if (nextScrollTo != null && !document.body.hasAttribute('locked')) {
-            scrollByPage(nextScrollTo);
-        }
-        nextScrollTo = null;
-    }, 85);
-    
-    function scrollTo(options) {
-        requestAnimationFrame(() => {
-            document.body.scrollTo(options);
-        });
-    }
-    function scrollToMax(down) {
-        var maxScrollLeft = document.body.scrollWidth - document.body.clientWidth;
-        var maxScrollTop = document.body.scrollHeight - document.body.clientHeight;
-        
-        let scrollOptions = { behavior: 'smooth' };
-        if (down) {
-            scrollOptions.top = maxScrollTop;
-        } else {
-            scrollOptions.left = maxScrollLeft;
-        }
-        scrollTo(scrollOptions);
-    }
-    function scrollToMin(down) {
-        let scrollOptions = { behavior: 'smooth' };
-        if (down) {
-            scrollOptions.top = 0;
-        } else {
-            scrollOptions.left = 0;
-        }
-        scrollTo(scrollOptions);
-    }
-    function scrollByPage(delta, down) {
-        var maxScrollLeft = document.body.scrollWidth - document.body.clientWidth;
-        var maxScrollTop = document.body.scrollHeight - document.body.clientHeight;
-
-        let scrollOptions = { behavior: 'smooth' };
-        if (down) {
-            scrollOptions.top = document.body.scrollTop + delta;
-        } else {
-            scrollOptions.left = document.body.scrollLeft + delta;
-        }
-        scrollTo(scrollOptions);
-    }
-    
-    
-    var isKeyDown = false;
-    document.addEventListener('keydown', (event) => {
-        if (isKeyDown == false && !document.body.hasAttribute('locked')) {
-            isKeyDown = true;
-            let scrollDown = (bodyScrollContext == 'vertical' ? true : false);
-            let scrollUp = (bodyScrollContext == 'horizontal' ? false : true);
-            if (event.key === 'End') {
-                event.preventDefault();
-                scrollToMax(scrollDown);
-            } else if (event.key === 'Home') {
-                event.preventDefault();
-                scrollToMin(scrollUp);
-            } else if (event.key === 'PageDown') {
-                event.preventDefault();
-                if (event.altKey) {
-                    scrollToMax(scrollDown);
-                } else {
-                    scrollByPage(500, scrollDown);
-                }
-            } else if (event.key === 'PageUp') {
-                event.preventDefault();
-                if (event.altKey) {
-                    scrollToMin(scrollUp);
-                } else {
-                    scrollByPage(-500, scrollUp);
-                }
-            }
-            setTimeout(() => {
-                isKeyDown = false;
-            }, 150)
-        }
-    });
-}
+burgerMenu.addEventListener("blur", (event) => {
+        burgerMenuFocused = false;
+});
 
 
-/*--------------------------------------/
-/                                       /
-/     END OF HORIZONTAL SCROLL PART     /
-/                                       /
-/--------------------------------------*/
+
+

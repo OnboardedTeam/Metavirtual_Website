@@ -1,166 +1,279 @@
-section#ourWork {
-    /* background: linear-gradient(180deg, #000 0%, #010209 63.54%); */
-}
+/*----------------DEBUT OUR WORK------------------------*/
 
-section#ourWork h2 {
+#ourVideos {
     display: flex;
+    padding: 100px;
+    padding-block-start: 120px;
+    margin-left: 300px;
+    margin-right: 300px;
     flex-direction: column;
-    justify-content: center;
-    color: #fcfafc;
-    text-align: center;
-    text-shadow: /* text stroke */ rgb(255, 72, 255) 2px 0px 0px, rgb(255, 72, 255) 1.75517px 0.958851px 0px, rgb(255, 72, 255) 1.0806px 1.68294px 0px, rgb(255, 72, 255) 0.141474px 1.99499px 0px, rgb(255, 72, 255) -0.832294px 1.81859px 0px, rgb(255, 72, 255) -1.60229px 1.19694px 0px, rgb(255, 72, 255) -1.97998px 0.28224px 0px, rgb(255, 72, 255) -1.87291px -0.701566px 0px, rgb(255, 72, 255) -1.30729px -1.5136px 0px, rgb(255, 72, 255) -0.421592px -1.95506px 0px, rgb(255, 72, 255) 0.567324px -1.91785px 0px, rgb(255, 72, 255) 1.41734px -1.41108px 0px, rgb(255, 72, 255) 1.92034px -0.558831px 0px,
-        /* glow shadow */ 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 4px 4px rgba(132, 36, 132, 0.5), 0px 0px 15px rgb(255, 72, 255);
-    font-size: 1.25rem;
-    font-family: Orbitron;
-    font-weight: 700;
-    letter-spacing: 0.125rem;
-    margin: 50px 0;
-}
-
-section#ourWork p {
-    color: #FFF;
-    text-align: center;
-    font-size: 0.7rem;
-    font-family: Orbitron;
-    font-weight: 700;
-    letter-spacing: 0.1rem;
-}
-
-section#ourWork {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    flex-direction: row;
-    height: 100%;
-    width: 100%;
-}
-
-section#ourWork .cards {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 15%;
-    margin: 15px;
-    padding: 15px;
-    box-sizing: border-box;
-    color: white;
-    margin-top: 8%;
-    flex: 1;
-}
-
-section#ourWork .cards .card {
-    display: flex;
-    flex-direction: column;
-    width: 340px;
     align-items: center;
 }
 
-section div.content {
-    padding: 15px;
-    box-sizing: border-box;
-    flex: 1;
-}
-
-section div.content.shrink {
-    flex: 0.65;
-}
-
-section div.content.shrink.semi {
-    flex: 0.88;
-}
-
-section#ourWork div.cards div.card div.cardContainer {
+#ourvideos-title {
     display: flex;
-    width: 110%;
-    height: auto;
+    justify-content: center;
+}
+
+#ourvideos-title p {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 100px;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    color: #18191A;
+}
+
+.video-container {
+    display: flex;
+    gap: 200px;
+}
+
+.video-box {
+    width: 400px;
+    text-align: center;
+}
+
+.video {
+    width: 100%;
     aspect-ratio: 1/1;
-    border-radius: 25px;
-    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.7));
-    background-color: rgb(13, 21, 38, 0.8);
-    background: rgb(13, 21, 38, 0.8);
-    background: radial-gradient(circle, rgba(28, 53, 153, 0.8) 0%, rgba(13, 21, 38, 0.8) 80%, rgba(13, 21, 38, 0.8) 100%);
-    backdrop-filter: blur(5px);
-    transition: 0.25s;
-
 }
 
-section#ourWork div.cards div.card div.cardContainer.video {
-    overflow: hidden;
-
-}
-
-section#ourWork div.cards div.card div.cardContainer.video :is(video, img, iframe) {
+.video-box video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    pointer-events: none;
 }
 
-/************************************* Media queries ********************************/
-
-@media screen and (max-width: 1520px) {
-    section#ourWork .cards .card {
-        width: 300px;
-    }
-    section#ourWork .cards {
-        gap: 11%;
-    }
+.video-title {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    color: #18191A;
 }
 
-@media screen and (max-width: 1220px) {
-    section#ourWork .cards .card {
-        width: 255px;
-        }
-    section#ourWork .cards {
-        gap: 8%;
-    }
+.video-text {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.1em;
+    color: #18191A;
 }
 
-@media screen and (max-width: 970px) {
-    section#ourWork .cards .card {
-        width: 220px;
-    }
-    section#ourWork .cards {
-        gap: 5%;
-    }
-}
+/*----------------FIN OUR WORK------------------------*/
 
-@media screen and (max-width: 795px) {
-    section#ourWork .cards .card {
-        width: 150px;
+/*----------------DEBUT MEDIAQUERIES------------------------*/
+@media only screen and (min-width: 280px) and (max-width: 320px) {
+    section#ourVideos {
+        padding: 50px 0 0 0;
+        margin: 0;
     }
-    section#ourWork h2 {
-        font-size: 0.9rem;
-    }
-    section#ourWork p {
-        font-size: 0.5rem;
-    }
-}
 
-@media screen and (max-width: 660px) {
-    section#ourWork .cards .card {
-        width: 130px;
-    }
-    section#ourWork h2 {
-        font-size: 0.7rem;
-    }
-    section#ourWork p {
-        font-size: 0.5rem;
-    }
-}
+    #ourvideos-title {
+        display: flex;
+        justify-content: center;
 
-@media screen and (max-width: 500px) {
-    section#ourWork .cards .card {
-        width: 110px;
     }
-    section#ourWork h2 {
-        font-size: 0.4rem;
-        margin: 10px 0;
+
+    #ourvideos-title p {
+        font-size: 22px;
+        margin: 0px 0 50px 0;
     }
-    section#ourWork p {
-        font-size: 0.3rem;
+
+    .video-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .video-box {
+        width: 100%;
+    }
+
+    .video-title {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .video-text {
+        text-align: center;
+        margin: 0 10px 0 10px;
+    }
+
+    .video-text p {
+        font-size: 15px;
     }
 }
 
-/************************************************************************************/
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+    section#ourVideos {
+        padding: 50px 0 0 0;
+        margin: 0;
+    }
+
+    #ourvideos-title {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    #ourvideos-title p {
+        font-size: 22px;
+        margin: 0px 0 50px 0;
+    }
+
+    .video-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .video-box {
+        width: 320px;
+    ;
+    }
+
+    .video-title {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .video-text {
+        text-align: center;
+        margin: 0 10px 0 10px;
+    }
+
+    .video-text p {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 736px) {
+    section#ourVideos {
+        padding: 50px 0 0 0;
+        margin: 0;
+    }
+
+    #ourvideos-title {
+        display: flex;
+        justify-content: center;
+    }
+
+    #ourvideos-title p {
+        font-size: 28px;
+        margin: 0px 0 50px 0;
+    }
+
+    .video-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .video-box {
+        width: 320px;
+    ;
+    }
+
+    .video-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .video-text {
+        text-align: center;
+        margin: 0 10px 0 10px;
+    }
+
+    .video-text p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 737px) and (max-width: 1023px) {
+    section#ourVideos {
+        padding: 100px 0 0 0;
+        margin: 0;
+    }
+
+    #ourvideos-title {
+        display: flex;
+        justify-content: center;
+    }
+
+    #ourvideos-title p {
+        font-size: 28px;
+        margin: 0px 0 50px 0;
+    }
+
+    .video-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .video-box {
+        width: 400px;
+    ;
+    }
+
+    .video-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .video-text {
+        text-align: center;
+        margin: 0 10px 0 10px;
+    }
+
+    .video-text p {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1600px) {
+    section#ourVideos {
+        padding: 100px 0 0 0;
+        margin: 0;
+    }
+
+    #ourvideos-title {
+        display: flex;
+        justify-content: center;
+    }
+
+    #ourvideos-title p {
+        font-size: 30px;
+        margin: 0px 0 50px 0;
+    }
+
+    .video-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .video-box {
+        width: 400px;
+    ;
+    }
+
+    .video-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .video-text {
+        text-align: center;
+        margin: 0 10px 0 10px;
+    }
+
+    .video-text p {
+        font-size: 20px;
+    }
+}
+/*----------------FIN MEDIAQUERIES------------------------*/

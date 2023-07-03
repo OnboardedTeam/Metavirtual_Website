@@ -177,7 +177,7 @@ function checkSection() {
     });
 };
 
-document.body.addEventListener('scroll', () => {
+window.addEventListener('scroll', () => {
     checkSection();
 });
 checkSection();

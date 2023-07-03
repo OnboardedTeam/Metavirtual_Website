@@ -1,0 +1,313 @@
+/*--------------SECTION WHYMETAVIRTUAL*/
+
+section#WhyMetavirtual {
+    display: flex;
+    flex-direction: column;
+    background-color: #18191A;
+    overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#whymetavirtual-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+#whymetavirtual-title p {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0.1em;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 200px;
+    width: 60%;
+}
+
+div.text {
+    color: #FFFFFF;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+}
+
+div.details {
+    display: flex;
+}
+
+div.details p {
+    color: #FFFFFF;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+}
+
+div.details a {
+    margin-left: 50px;
+}
+
+section#WhyMetavirtual div.content div.details button.download {
+    border-radius: 100px;
+    padding: 20px 50px 20px 50px;
+    background: #0361FA;
+    border: none;
+    color: #FFFFFF;
+    font-family: Roboto, sans-serif;
+    font-style: bold;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    margin: auto;
+    transition: 0.3s;
+}
+
+section#WhyMetavirtual div.content div.details button.download:hover {
+    box-shadow: 0px 0px 25px 0px  #0361FA;
+    transform: scale(110%);
+    color: #FFF;
+    text-shadow: 0px 0px 25px #FFF, 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.glitchgirl-container {
+    width: 500px;
+    height: 500px;
+}
+
+.glitchgirl-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the image fills the container while maintaining its aspect ratio */
+    pointer-events: none;
+}
+
+/*----------------FIN WHYMETAVIRTUAL------------------------*/
+
+/*----------------DEBUT MEDIAQUERIES------------------------*/
+@media only screen and (min-width: 280px) and (max-width: 320px) {
+
+    section#WhyMetavirtual {
+        padding-top: 50px;
+        padding-bottom: 0;
+        height: 100vh;
+    }
+
+    #whymetavirtual-title p {
+        font-size: 22px;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+        z-index: 8;
+    }
+
+    .glitchgirl-container {
+        position: absolute;
+        height: 400px;
+        width: 100%;
+        opacity: 30%;
+    }
+
+    .text {
+        text-align: center;
+        margin: 0 10px 0 10px;
+    }
+
+    .speech {
+        font-size: 17px;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.details a {
+        text-align: center;
+        margin-left: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    section#WhyMetavirtual div.content div.details button.download {
+        padding: 10px 25px 10px 25px;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+
+    section#WhyMetavirtual {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #whymetavirtual-title p {
+        font-size: 24px;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+        z-index: 8;
+    }
+
+    .glitchgirl-container {
+        position: absolute;
+        height: 400px;
+        width: 100%;
+        opacity: 30%;
+    }
+
+    .text {
+        text-align: center;
+        margin: 0 25px 0 25px;
+    }
+
+    .speech {
+        font-size: 18px;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.details a {
+        text-align: center;
+        margin-left: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    section#WhyMetavirtual div.content div.details button.download {
+        padding: 15px 30px 15px 30px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 736px) {
+
+    section#WhyMetavirtual {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #whymetavirtual-title p {
+        font-size: 28px;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+        z-index: 8;
+    }
+
+    .glitchgirl-container {
+        position: absolute;
+        height: 400px;
+        width: 100%;
+        opacity: 30%;
+    }
+
+    .text {
+        text-align: center;
+        margin: 0 50px 0 50px;
+    }
+
+    .speech {
+        font-size: 20px;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.details a {
+        text-align: center;
+        margin-left: 0;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    section#WhyMetavirtual div.content div.details button.download {
+        padding: 20px 50px 20px 50px;
+    }
+}
+
+@media only screen and (min-width: 737px) and (max-width: 1023px) {
+    section#WhyMetavirtual {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #whymetavirtual-title p {
+        font-size: 28px;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+        z-index: 8;
+    }
+
+    .glitchgirl-container {
+        position: absolute;
+        height: 400px;
+        width: 100%;
+        opacity: 30%;
+    }
+
+    .text {
+        text-align: center;
+        margin: 0 75px 0 75px;
+    }
+
+    .speech {
+        font-size: 20px;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.details a {
+        text-align: center;
+        margin-left: 0;
+        margin-top: 60px;
+        width: 100%;
+    }
+
+    section#WhyMetavirtual div.content div.details button.download {
+        padding: 20px 50px 20px 50px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1326px) {
+    .content {
+        margin-left: 100px;
+        width: 100%;
+    }
+}
+/*----------------FIN MEDIAQUERIES------------------------*/

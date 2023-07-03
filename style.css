@@ -85,7 +85,7 @@ div.mainPage .button {
     display: flex;
     align-self: center;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 100px;
 }
 
@@ -130,15 +130,15 @@ header {
     padding: 20px;
     box-sizing: border-box;
     z-index: 10;
-    border-radius: 25px;
     backdrop-filter: blur(6px);
-
     color: #FFFFFF;
+    background-color: rgba(24, 25, 26, 0.5);
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     letter-spacing: 0.1em;
+    transition: 0.3s;
 }
 
 header a:has(img.logo) {
@@ -147,15 +147,12 @@ header a:has(img.logo) {
 
 header a img.logo {
     margin-right: auto;
-    height: 20px; /* A REMPLACER */
-    transform: scale(11);
+    height: 100px; /* A REMPLACER */
     margin-left: 75px;
-    margin-top: 50px;
-
 }
 
 header a img.logo:hover {
-    transform: scale(1300%);
+    transform: scale(110%);
 }
 
 header a.sectionLink {
@@ -175,229 +172,256 @@ header a.sectionLink:hover {
     transform: scale(120%);
 }
 
+/*BURGER MENU*/
+a.burgerMenu {
+    position: fixed;
+    display: flex;
+    width: 45px;
+    height: 35px;
+    margin: 20px;
+    gap: 10px;
+    top: 0;
+    right: 0;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    z-index: 10;
+    transform: translateY(-160%);
+    transition: 0.2s;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+}
+
+span.burgerMenuButton {
+    display: block;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    background-color: #eaeaea;
+    border-radius: 25px;
+}
+/*FIN BURGER MENU*/
+
 /*----------------FIN HEADER MENU------------------------*/
 
-/*--------------SECTION WHYMETAVIRTUAL*/
-
-section#WhyMetavirtual {
-    display: flex;
-    flex-direction: row;
-    background-color: #18191A;
-    height: 500px;
-    overflow: hidden;
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 200px;
-    width: 60%;
-}
-
-div.text {
-    color: #FFFFFF;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 0.1em;
-}
-
-div.details {
-    display: flex;
-}
-
-div.details p {
-    color: #FFFFFF;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 0.1em;
-}
-
-div.details a {
-    margin-left: 50px;
-
-}
-
-section#WhyMetavirtual div.content div.details button.download {
-    border-radius: 100px;
-    padding: 20px 50px 20px 50px;
-    background: #0361FA;
-    border: none;
-    color: #FFFFFF;
-    font-family: Roboto, sans-serif;
-    font-style: bold;
-    font-weight: 700;
-    font-size: 24px;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    margin: auto;
-    transition: 0.3s;
+/*----------------DEBUT MEDIAQUERIES------------------------*/
+@media only screen and (min-width: 280px) and (max-width: 320px) {
+    div.mainPage :is(h1, h2) {
+        font-size: 22px;
     }
 
-section#WhyMetavirtual div.content div.details button.download:hover {
-    box-shadow: 0px 0px 25px 0px  #0361FA;
-    transform: scale(110%);
-    color: #FFF;
-    text-shadow: 0px 0px 25px #FFF, 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
+    div.mainPage .button {
+    display: none;
+    }
 
-.glitchgirl-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* This ensures the image fills the container while maintaining its aspect ratio */
+    div.mainPage .text {
+        margin-bottom: 25px;
+    }
 }
 
-/*----------------FIN WHYMETAVIRTUAL------------------------*/
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+    div.mainPage :is(h1, h2) {
+        font-size: 1.4rem;
+    }
 
-/*----------------DEBUT WHATWEOFFER------------------------*/
+    div.mainPage .button {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        margin-bottom: 100px;
+        margin-top: 25px;
+    }
 
-section#WhatWeOffer {
-    display: flex;
-    padding: 100px;
-    margin-left: 300px;
-    margin-right: 300px;
-    flex-direction: column;
+    div.mainPage button {
+        font-size: 0.9rem;
+
+    }
 }
 
-.offer-container {
-    display: flex;
-    gap: 200px;
-    justify-content: space-between;
+@media only screen and (min-width: 481px) and (max-width: 736px) {
+
+    div.mainPage :is(h1, h2) {
+        font-size: 1.6rem;
+    }
+
+    div.mainPage .button {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        margin-bottom: 50px;
+        margin-top:25px;
+    }
+
+    div.mainPage button {
+        font-size: 1rem;
+    }
 }
 
-#titre1 {
-    font-size: 30px;
+@media only screen and (min-width: 737px) and (max-width: 1023px) {
+    div.mainPage :is(h1, h2) {
+        font-size: 1.7rem;
+    }
+
+    div.mainPage .button {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        margin-bottom: 50px;
+        margin-top: 25px;
+    }
+
+    div.mainPage .text {
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 90%;
+    }
+
+    div.mainPage button {
+        font-size: 1rem;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        text-align: center;
+        gap: 50px;
+        width: 100%;
+        height: 100px;
+        padding: 20px;
+        box-sizing: border-box;
+        z-index: 10;
+        backdrop-filter: blur(6px);
+        color: #FFFFFF;
+        background-color: rgba(24, 25, 26, 0.5);
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        transition: 0.3s;
+    }
+
+    header a img.logo {
+        margin-left: 1.6rem;
+    }
+
+
 }
 
-.offer-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@media only screen and (max-width: 480px) and (orientation: landscape) {
+    div.mainPage :is(h1, h2) {
+        font-size: 1.4rem;
+    }
 
-    color: #18191A;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: 0.1em;
+    div.mainPage .button {
+        display: none;
+    }
 }
 
-.offer2-container {
-    display: flex;
-    justify-content: space-between;
+@media only screen and (min-height:280px ) and (max-height: 320px) and (orientation: landscape) {
+    div.mainPage :is(h1, h2) {
+        font-size: 1.4rem;
+    }
 }
 
-.offer2img-container {
-    display: flex;
+@media only screen and (min-width: 737px) and (max-width: 1023px) and (orientation: landscape) {
+    header {
+        transform: translateY(-100%);
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        height: 0%;
+        overflow: hidden;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #000000c7;
+        font-size: 1.4rem;
+    }
+
+    header a img.logo {
+        display: none;
+    }
+
+
+    a.burgerMenu {
+        transform: translateY(0%);
+        z-index: 11;
+    }
+
+    a.burgerMenu:is(:active, :focus, :focus-within) span.burgerMenuButton  {
+        transition: 0.1s;
+        width: 70%;
+    }
+
+    a.burgerMenu:is(:active, :focus, :focus-within) span.burgerMenuButton:nth-child(1)  {
+        transform: translateY(14.5px) rotate(-45deg);
+    }
+    a.burgerMenu:is(:active, :focus, :focus-within) span.burgerMenuButton:nth-child(2)  {
+        transform: rotate(45deg);
+    }
+    a.burgerMenu:is(:active, :focus, :focus-within) span.burgerMenuButton:nth-child(3)  {
+        opacity: 0;
+    }
+
+    a.burgerMenu:is(:active, :focus, :focus-within) + header {
+        transform: translateY(0%);
+        height: 100%;
+        width: 100%;
+    }
 }
 
+/*------------- BURGER MENU RESPONSIVE-----------------*/
 
-.image-container {
-    position: relative;
-    display: inline-block;
-    width: 1200px;
-    height: 500px;
+
+@media screen and (max-width: 736px) {
+    header {
+        transform: translateY(-100%);
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        height: 0%;
+        overflow: hidden;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #000000c7;
+    }
+
+    header a img.logo {
+        display: none;
+    }
+
+
+    a.burgerMenu {
+        transform: translateY(0%);
+        z-index: 11;
+    }
+
+    a.burgerMenu:is(:active, :focus, :focus-within) span.burgerMenuButton  {
+        transition: 0.1s;
+        width: 70%;
+    }
+
+    a.burgerMenu:is(:active, :focus, :focus-within) span.burgerMenuButton:nth-child(1)  {
+        transform: translateY(14.5px) rotate(-45deg);
+    }
+    a.burgerMenu:is(:active, :focus, :focus-within) span.burgerMenuButton:nth-child(2)  {
+        transform: rotate(45deg);
+    }
+    a.burgerMenu:is(:active, :focus, :focus-within) span.burgerMenuButton:nth-child(3)  {
+        opacity: 0;
+    }
+
+    a.burgerMenu:is(:active, :focus, :focus-within) + header {
+        transform: translateY(0%);
+        height: 100%;
+        width: 100%;
+    }
 }
 
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* This ensures the image fills the container while maintaining its aspect ratio */
-    margin-bottom: 100px;
-}
+/*------------- FIN BURGER MENU RESPONSIVE-----------------*/
 
-.text-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #FFFFFF;
-}
-
-.text-overlay h2, p {
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: 0.1em;
-}
-
-/*----------------FIN WHATWEOFFER------------------------*/
-
-/*----------------DEBUT OUR WORK------------------------*/
-
-.ourvideos {
-    display: flex;
-    padding: 100px;
-    margin-left: 300px;
-    margin-right: 300px;
-    flex-direction: column;
-    align-items: center;
-}
-
-.ourvideos-title {
-    display: contents;
-}
-
-#ourvideos-title p {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 100px;
-
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 30px;
-    letter-spacing: 0.1em;
-    color: #18191A;
-}
-
-.video-container {
-    display: flex;
-    gap: 200px;
-}
-
-.video-box {
-    width: 400px;
-    text-align: center;
-}
-
-.video {
-    width: 100%;
-    aspect-ratio: 1/1;
-}
-
-.video-box video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.video-title {
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 30px;
-    letter-spacing: 0.1em;
-    color: #18191A;
-}
-
-.video-text {
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: 0.1em;
-    color: #18191A;
-}
-
-/*----------------FIN OUR WORK------------------------*/
+/*----------------FIN MEDIAQUERIES------------------------*/

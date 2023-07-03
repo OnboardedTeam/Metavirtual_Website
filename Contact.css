@@ -1,0 +1,425 @@
+/*!*----------------DEBUT CONTACT------------------------*!*/
+
+/*section#Contact {*/
+/*    background-color: #18191A;*/
+/*}*/
+
+/*section#Contact .formulaire {*/
+/*    width: 100%;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    margin-top: 100px;*/
+/*    display: flex;*/
+/*}*/
+
+/*.form-container {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    align-items: center;*/
+/*    gap: 100px;*/
+/*}*/
+
+/*.img-robot {*/
+/*    width: 100%;*/
+/*    height: 500px;*/
+
+/*}*/
+
+/*.photo-robot {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    border-radius: 25px;*/
+/*}*/
+
+/*section#Contact .contactform {*/
+/*    margin-bottom: 100px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*section#Contact #titre {*/
+/*    font-family: Roboto, sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 700;*/
+/*    font-size: 30px;*/
+/*    letter-spacing: 0.1em;*/
+/*    color: #FFFFFF;*/
+/*    padding-top: 100px;*/
+/*    margin-bottom: 100px;*/
+/*}*/
+
+/*!*section#Contact .icons {*!*/
+/*!*    padding-top: 20px;*!*/
+/*!*    padding-bottom: 20px;*!*/
+/*!*}*!*/
+
+/*!*section#Contact #facebook {*!*/
+/*!*    padding-right: 60px;*!*/
+/*!*}*!*/
+
+/*!*section#Contact #insta {*!*/
+/*!*    padding-right: 60px;*!*/
+/*!*}*!*/
+
+/*section#Contact .form {*/
+/*    flex-direction: column;*/
+/*    text-align: center;*/
+/*}*/
+
+/*section#Contact .fullname {*/
+/*    padding-bottom: 10px;*/
+/*}*/
+
+/*section#Contact #fullname {*/
+/*    background-color: #FFF;*/
+/*    width: 285px;*/
+/*    height: 40px;*/
+/*    border-radius: 25px;*/
+/*    color: #18191A;*/
+/*    font-family: Roboto, sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 700;*/
+/*    font-size: 14px;*/
+/*    letter-spacing: 0.1em;*/
+/*    padding: 10px;*/
+/*}*/
+
+/*section#Contact .email {*/
+/*    padding-bottom: 10px;*/
+/*}*/
+
+/*section#Contact #email {*/
+/*    background-color: #FFF;*/
+/*    width: 285px;*/
+/*    height: 40px;*/
+/*    border-radius: 25px;*/
+/*    color: #18191A;*/
+/*    font-family: Roboto, sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 700;*/
+/*    font-size: 14px;*/
+/*    letter-spacing: 0.1em;*/
+/*    padding: 10px;*/
+/*}*/
+
+/*section#Contact #message {*/
+/*    text-align: left;*/
+/*    background-color: #FFF;*/
+/*    width: 500px;*/
+/*    height: 200px;*/
+/*    border-radius: 25px;*/
+/*    color: #18191A;*/
+/*    font-family: Roboto, sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 700;*/
+/*    font-size: 14px;*/
+/*    letter-spacing: 0.1em;*/
+/*}*/
+
+/*textarea {*/
+/*    padding: 10px;*/
+/*}*/
+
+/*section#Contact .button {*/
+/*    padding-top: 40px;*/
+/*    border-radius: 25px;*/
+/*}*/
+
+/*section#Contact #button {*/
+/*    border-radius: 100px;*/
+/*    padding: 20px 50px 20px 50px;*/
+/*    background: #0361FA;*/
+/*    border: none;*/
+/*    color: #FFFFFF;*/
+/*    font-family: Roboto, sans-serif;*/
+/*    font-style: bold;*/
+/*    font-weight: 700;*/
+/*    font-size: 24px;*/
+/*    letter-spacing: 0.1em;*/
+/*    cursor: pointer;*/
+/*    margin: auto;*/
+/*    transition: 0.3s;*/
+/*}*/
+
+/*section#Contact #button:hover {*/
+/*    box-shadow: 0px 0px 25px 0px  #0361FA;*/
+/*    transform: scale(110%);*/
+/*    color: #FFF;*/
+/*    text-shadow: 0px 0px 25px #FFF, 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);*/
+/*}*/
+
+/*!*----------------FIN CONTACT------------------------*!*/
+
+/*!*----------------DEBUT FOOTER------------------------*!*/
+/*footer {*/
+/*    background-color: #18191A;*/
+/*    color: #FFFFFF;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.private {*/
+/*    color: #FFFFFF;*/
+/*}*/
+/*!*----------------FIN FOOTER------------------------*!*/
+
+/*!*----------------DEBUT MEDIAQUERIES------------------------*!*/
+
+/*!*----------------FIN MEDIAQUERIES------------------------*!*/
+
+/*----------------DEBUT CONTACT------------------------*/
+
+section#Contact {
+    background-color: #18191A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+section#Contact .formulaire {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+}
+
+.img-robot {
+    width: 100%;
+    height: 700px;
+}
+
+.photo-robot {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+section#Contact .contactform {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+section#Contact #titre {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    padding-top: 100px;
+    margin-bottom: 100px;
+}
+
+section#Contact .form {
+    flex-direction: column;
+    text-align: center;
+}
+
+section#Contact .fullname,
+section#Contact .email {
+    padding-bottom: 10px;
+}
+
+section#Contact #fullname,
+section#Contact #email {
+    background-color: #FFF;
+    width: 100%;
+    max-width: 285px;
+    height: 40px;
+    border-radius: 25px;
+    color: #18191A;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    padding: 10px;
+}
+
+section#Contact #message {
+    text-align: left;
+    background-color: #FFF;
+    width: 100%;
+    max-width: 285px;
+    height: 200px;
+    border-radius: 25px;
+    color: #18191A;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    padding: 10px;
+}
+
+textarea {
+    padding: 10px;
+}
+
+section#Contact .button {
+    padding-top: 40px;
+    border-radius: 25px;
+}
+
+section#Contact #button {
+    border-radius: 100px;
+    padding: 20px 50px;
+    background: #0361FA;
+    border: none;
+    color: #FFFFFF;
+    font-family: Roboto, sans-serif;
+    font-style: bold;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    margin: auto;
+    transition: 0.3s;
+    width: fit-content;
+}
+
+section#Contact #button:hover {
+    box-shadow: 0px 0px 25px 0px  #0361FA;
+    transform: scale(1.1);
+    color: #FFF;
+    text-shadow: 0px 0px 25px #FFF, 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/*----------------FIN CONTACT------------------------*/
+
+/*----------------DEBUT FOOTER------------------------*/
+
+footer {
+    background-color: #18191A;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.private {
+    color: #FFFFFF;
+}
+
+/*----------------FIN FOOTER------------------------*/
+
+/*----------------DEBUT MEDIAQUERIES------------------------*/
+
+@media (max-width: 320px) {
+    form {
+        width: 100%;
+    }
+
+    section#Contact .formulaire {
+        margin-top: 0;
+    }
+
+    section#Contact .contactform {
+        margin-bottom: 0;
+    }
+
+    .text-overlay h2, p {
+        font-size: 10px;
+    }
+
+    section#Contact {
+        padding: 20px;
+    }
+
+    .form-container {
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .img-robot {
+        height: auto;
+    }
+
+    section#Contact #titre {
+        padding-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    section#Contact .fullname,
+    section#Contact .email,
+    section#Contact .message {
+        width: 100%;
+        max-width: none;
+        display: flex;
+    }
+
+    section#Contact #button {
+        font-size: 18px;
+    }
+
+    .img-robot {
+        display: none;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+
+    section#Contact .formulaire {
+        margin-top: 0;
+    }
+
+    section#Contact .contactform {
+        margin-bottom: 0;
+    }
+
+    .text-overlay h2, p {
+        font-size: 10px;
+    }
+
+    section#Contact {
+        padding: 20px;
+    }
+
+    .form-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .img-robot {
+        height: auto;
+    }
+
+    section#Contact #titre {
+        padding-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    section#Contact .fullname,
+    section#Contact .email,
+    section#Contact #message {
+        width: 100%;
+        max-width: none;
+    }
+
+    section#Contact #button {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .img-robot {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 999px) {
+    .img-robot {
+        display: none;
+    }
+}
+
+/*----------------FIN MEDIAQUERIES------------------------*/

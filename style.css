@@ -226,6 +226,8 @@ span.burgerMenuButton {
     flex: 1;
     background-color: #eaeaea;
     border-radius: 25px;
+    transform: rotate(0deg); /* debug when unfocus return to 0deg smoothly*/
+    transition: 0.15s;
 }
 /*FIN BURGER MENU*/
 
@@ -380,7 +382,7 @@ span.burgerMenuButton {
     }
 
     a.burgerMenu:is(:active, :focus, :focus-within) span.burgerMenuButton  {
-        transition: 0.1s;
+        transition: 0.15s;
         width: 70%;
     }
 
@@ -427,7 +429,7 @@ span.burgerMenuButton {
     }
 
     a.burgerMenu:is(:active, :focus, :focus-within) span.burgerMenuButton  {
-        transition: 0.1s;
+        transition: 0.15s;
         width: 70%;
     }
 

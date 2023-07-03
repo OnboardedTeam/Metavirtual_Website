@@ -262,6 +262,7 @@
 
 section#team {
     padding: 50px;
+    padding-block-start: 75px;
     display: flex;
     flex-direction: column;
     align-items: center;

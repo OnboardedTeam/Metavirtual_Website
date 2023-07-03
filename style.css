@@ -5,6 +5,32 @@ html, body {
     padding: 0;
 }
 
+[hidden] {
+    display: none !important;
+} [hidding] {
+    animation: fadeOut 1s ease-in forwards !important;
+} [unhidding] {
+    animation: fadeIn 1s ease-in forwards !important;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 /*-------------ALL PAGE--------------------*/
 
 .underline {

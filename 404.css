@@ -1,0 +1,56 @@
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    
+    min-height: 100vh;
+    padding: 5px;
+    margin: 0;
+    box-sizing: border-box;
+    
+    background: url(./assets/images/ia.png) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    backdrop-filter: brightness(0.3);
+    font-family: 'Orbitron';
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: auto;
+    color: #fcfafc;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: auto;
+    color: #fcfafc;
+}
+
+img.logo {
+    width: 250px;
+    height: 250px;
+}
+
+@media screen and (max-width: 280px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    img.logo {
+        width: 90%;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+}

@@ -54,6 +54,9 @@ html, body {
     background-color: #FFFFFF;
 }
 
+.no-controls {
+    pointer-events: none;
+}
 
 /*-------------FIN ALL PAGE--------------------*/
 

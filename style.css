@@ -406,6 +406,16 @@ span.burgerMenuButton {
     }
 }
 
+@media only screen and (max-width: 1400px) and (max-height: 800px) {
+    div.mainPage :is(h1, h2) {
+        margin-block: 6px;
+    }
+    div.mainPage .button {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+}
+
 /*------------- BURGER MENU RESPONSIVE-----------------*/
 
 

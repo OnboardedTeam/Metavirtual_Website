@@ -52,13 +52,20 @@ popupContactMobilePhone.addEventListener("input", (event) => {
 
     if (newValue.startsWith("+")) {
         let potentialIndicator = newValue.replace("+", "");
+        let found = false
         for (let i = 0; i < potentialIndicator.length; i++) {
             let indicator = potentialIndicator.slice(0, i == 0 ? undefined : -i);
             if (popupContactPhoneIndicator.querySelector(`option[value="${indicator}"]`)) {
                 popupContactPhoneIndicatorLastValue = indicator;
                 popupContactPhoneIndicator.value = indicator;
+                found = true;
                 break;
             }
         }
+        if (!found) {
+            popupContactMobilePhone.value = newValue.replace("+", `+${popupContactPhoneIndicator.value}`);
+        }
+    } else {
+        popupContactMobilePhone.value = `+${popupContactPhoneIndicator.value}${newValue}`;
     }
 });

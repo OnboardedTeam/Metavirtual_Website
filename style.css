@@ -168,6 +168,7 @@ header {
     font-size: 20px;
     letter-spacing: 0.1em;
     transition: 0.3s;
+    z-index: 9999;
 }
 
 header a:has(img.logo) {
@@ -216,7 +217,7 @@ a.burgerMenu {
     justify-content: space-between;
     flex-direction: column;
     box-sizing: border-box;
-    z-index: 10;
+    z-index: 99999;
     transform: translateY(-160%);
     transition: 0.2s;
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
@@ -381,7 +382,6 @@ span.burgerMenuButton {
 
     a.burgerMenu {
         transform: translateY(0%);
-        z-index: 11;
     }
 
     a.burgerMenu:is(:active, :focus, :focus-within) span.burgerMenuButton  {
@@ -438,7 +438,6 @@ span.burgerMenuButton {
 
     a.burgerMenu {
         transform: translateY(0%);
-        z-index: 11;
     }
 
     a.burgerMenu:is(:active, :focus, :focus-within) span.burgerMenuButton  {
